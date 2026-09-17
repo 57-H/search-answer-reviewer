@@ -1,93 +1,81 @@
 # Search Answer Reviewer
 
-Agent 收到网页搜索结果后，先审查准备使用的来源、引用和证据，再形成答案；无需用户额外要求“审查”。
+**让搜索结果先经过证据审查，再进入回答。**
 
-**状态：本地 alpha。** Skill 工作流和标准库 CLI 已实现；语义判断由宿主模型完成。正式模型对照评测尚未完成，不宣称降低幻觉的具体百分比。
+Search Answer Reviewer 是一个面向搜索增强任务的 agent skill。它帮助 agent 核对搜索结果是否指向所声称的来源、引用和数字是否与原文一致，以及证据是否足以支撑最终答案。审查发现问题时，它会指出具体缺口，并建议收窄或修正相关表述。
 
-| 输入问题 | 审查结果示例 |
+这个项目关注的是搜索结果到最终结论之间容易遗漏的核验步骤。例如：
+
+| 常见问题 | 审查重点 |
 |---|---|
-| “支持本地部署”被扩写成“完全离线” | 证据不足：还需核查外部服务依赖 |
-| 第三方教程被称为官方文档 | 对照归属证据，报告身份不符或无法确认 |
-| 引文/数字与已取得正文不一致 | 定位实际片段，说明差异及覆盖限制 |
-| 页面超时、403 或 404 | 无法核实；不会自动判为虚构 |
+| “支持本地部署”被写成“完全离线” | 原文是否覆盖外部 API、模型下载等依赖 |
+| 第三方教程被称为官方文档 | 页面归属与搜索结果描述是否一致 |
+| 引文、年份或数字与正文不同 | 找到原文位置，说明差异和适用范围 |
+| 页面无法访问 | 如实标记无法核实，不把访问失败当成虚构证据 |
 
-## 60 秒运行演示
+## 快速体验
 
-需要 Python 3.10+，无第三方依赖。在本项目目录执行：
+需要 Python 3.10+，不需要安装第三方依赖。在项目目录运行：
 
 ```bash
 python3 scripts/review.py replay --example examples/overclaim --out-dir work/demo
 ```
 
-打开 `work/demo/review.md`，或直接阅读保存的[过度推断示例](examples/overclaim/review.md)。
+查看 `work/demo/review.md`，或直接阅读[示例审查报告](examples/overclaim/review.md)。在这个示例里，来源只证明“支持本地部署”，因此“完全离线”会被标为**证据不足**；报告给出原文位置和可接受的收窄表述。
 
-示例会把“Alpha 完全离线”标为**证据不足**：已保存的原文只说支持本地部署，报告定位原文片段，并建议把结论收窄到这一点。它不会把未说明的网络依赖推断成不存在。
+`replay` 使用保存的合成材料和判断，展示报告生成流程，不会联网或重新调用模型。另有[有据结论](examples/supported/review.md)、[无法访问](examples/unavailable/review.md)两个示例，以及基于 [Python 官方文档](https://docs.python.org/3.10/library/sqlite3.html) 的[真实来源核查记录](examples/python-doc-version/context.md)。
 
-还可以回放[有据结论](examples/supported/review.md)和[无法访问](examples/unavailable/review.md)：
+## 如何接入
 
-```bash
-python3 scripts/review.py replay --example examples/supported --out-dir work/supported
-python3 scripts/review.py replay --example examples/unavailable --out-dir work/unavailable
+### 作为 agent skill 使用
+
+将整个项目目录放入宿主的 skills 目录，保留 `SKILL.md`、`scripts/` 和 `references/` 的相对位置。Skill 指导 agent 在搜索工具返回结果后审查准备使用的来源，并在回答前检查新加入的重要事实；用户无需每次单独提出审查要求。
+
+仅安装 skill 时，是否每次执行仍取决于宿主模型和工具调用路径。它不能拦截所有搜索工具，也不能机械保证每次触发。
+
+### 在自建 agent 中强制审查
+
+如果宿主可以控制搜索入口，可接入 [`SearchAuditGate`](scripts/reviewer_core/gate.py)。门控会先取得搜索结果，再要求宿主审查器核对每条返回来源；报告通过校验后，结果才会交给 agent。审查缺失、引用无效或审查器报错时，门控不会放行。接入参数和约束见[宿主集成说明](references/host-integration.md)。
+
+```python
+from reviewer_core.gate import SearchAuditGate
+
+gate = SearchAuditGate(search_backend, host_auditor)
+audited = gate.search(user_question, search_query)
 ```
 
-**离线演示使用保存的合成示例判断，不调用模型或网络。** 它展示取证、验证和报告链路，不是模型效果实验。
+要保证这一路径中的**每次搜索**都被审查，宿主须只向 agent 暴露门控搜索工具，并隐藏可绕过门控的原始搜索工具。这个保证针对“审查流程确实执行并通过校验”，不代表模型对证据的语义判断一定正确。Codex 内置托管 WebSearch 不能由本地 `PostToolUse` 钩子强制接管；使用该内置工具时，skill 仍是模型遵循的工作指引。
 
-另有一份基于 [Python 官方文档](https://docs.python.org/3.10/library/sqlite3.html) 的[单次真实来源试跑](examples/python-doc-version/context.md)：它定位了版本断言与页面原文的矛盾，并保存了[审查报告](examples/python-doc-version/review.md)。这也不是对照评测。
+门控会返回可展示的状态行，例如 **`搜索结果审查通过 2/3 条`**。分母是本次返回的来源数；只有某条来源关联的断言全部获得 `supported` 判断，才计入分子。若希望用户每次都看到状态，应由宿主直接展示门控返回的 `status_line`，而不是让模型自行计算或转述。没有门控报告时，不应输出“审查通过”的数字。
 
-## 实际案例：核对一篇论文的 45 条参考文献
+## 一个真实案例：核对 45 条论文参考文献
 
-用户提供 [MicroFM（CVPR 2026）](https://openaccess.thecvf.com/content/CVPR2026/html/Zhan_MicroFM_Physics-guided_Flow_Matching_for_Isotropic_Microscopy_Reconstruction_CVPR_2026_paper.html) 的 PDF，要求找出全部参考文献的可访问链接。宿主从 PDF 的参考文献页提取 45 条标题，查询学术元数据与论文页面，再用本 skill 的 `prepare` / `finalize` 核对标题和稳定标识符的对应关系。保存的[审查报告](examples/microfm-references/review.md)包含 45 条身份判断；[输入](examples/microfm-references/request.json)和[判断](examples/microfm-references/judgments.json)可用于复现报告。
+在核对 [MicroFM（CVPR 2026）](https://openaccess.thecvf.com/content/CVPR2026/html/Zhan_MicroFM_Physics-guided_Flow_Matching_for_Isotropic_Microscopy_Reconstruction_CVPR_2026_paper.html) 参考文献的任务中，agent 从用户提供的 PDF 提取 45 条条目，查找可访问的论文页面，并用本项目的审查流程核对标题与稳定标识符。[完整报告](examples/microfm-references/review.md)、[输入记录](examples/microfm-references/request.json)和[审查判断](examples/microfm-references/judgments.json)保存在仓库中。
 
-这个案例体现了两种容易漏掉的核查：仅按标题搜索时，第 [14] 条曾返回一篇无关的冷冻电镜论文，改用原文给出的 arXiv 编号才定位到正确预印本；第 [45] 条在用户 PDF 中标为 2020 年，而 [ICCV 原始页面](https://openaccess.thecvf.com/content_iccv_2017/html/Zhu_Unpaired_Image-To-Image_Translation_ICCV_2017_paper.html)标为 2017 年。最终交付的链接区分开放全文、预印本和 DOI 页面。
+核查发现了两个很有代表性的陷阱：第 [14] 条的标题搜索曾指向一篇无关论文，使用参考文献中的 arXiv 编号才找到对应预印本；第 [45] 条在用户 PDF 中标为 2020 年，而 [ICCV 原始页面](https://openaccess.thecvf.com/content_iccv_2017/html/Zhu_Unpaired_Image-To-Image_Translation_ICCV_2017_paper.html)标为 2017 年。交付的链接区分了开放全文、预印本和 DOI 页面。
 
-**核查边界：**45/45 指文献身份与记录匹配，不代表 45 篇全文均可免费下载，也不证明论文内容本身正确。本次由用户显式调用 skill，使用普通宿主搜索工具；它不是 `SearchAuditGate` 的强制触发测试，也不是降低幻觉率的对照实验。由于任务要求核对 45 条文献，记录的读取动作超过默认 4 次补证预算，报告如实保留了该提示。
+报告中的 45/45 表示**文献身份与记录匹配**，不表示每篇全文都能免费下载，也不证明论文内容正确。这个案例由用户显式调用 skill 完成，不用于证明门控的自动触发效果或幻觉率改善。
 
-## 作为 Skill 使用
+## 审查流程与输出
 
-将整个目录安装到宿主的 skills 目录，保留 SKILL.md、scripts 和 references 的相对位置。Skill 的触发描述以**搜索工具返回结果**为起点：agent 在引用搜索结果或据此推荐前，自动检查可能用到的来源；形成答案后再核对其中新增的重要事实。用户无需单独输入审查指令。
-
-**要保证每次触发，宿主必须控制搜索入口。** 本项目提供 [`SearchAuditGate`](scripts/reviewer_core/gate.py)：宿主调用它的 `search(question, query)`，它先调用搜索后端，再调用宿主审查器生成 judgments，验证当前 bundle 和每条结果的审查覆盖，最后才把结果交给 agent。审查失败会报错，不会交付未审查的结果。接入契约见[强制触发说明](references/host-integration.md)。
-
-门控还返回可直接展示的状态行，例如 **`搜索结果审查通过 2/3 条`**。分母是本次返回的结果数；只有一条结果关联的所有断言都得到 `supported`，它才计入分子。证据不足、无法核实和矛盾均不算通过。Agent 可原样输出该行；需要确保用户每次都看到时，由宿主直接显示它。
-
-在宿主中只向 agent 暴露门控搜索工具，不暴露原始搜索工具，才能保证该路径中的每次搜索都审查。仅安装 SKILL.md 仍依赖模型自主选择。Codex 内置托管 WebSearch 不走本地 `PostToolUse` 钩子，因此本项目不能强制接管该内置工具；要获得硬保证，需使用可控的搜索后端或自建 agent 调用循环。
-
-宿主负责断言提取、页面读取和语义审查；无需配置本项目专属 API Key。联网能力和模型用量取决于宿主。
-
-仅有搜索结果也能检查标题、作者、身份、摘要与目标页面是否对应。仅有快照时审查其内部支持关系，不声称验证当前线上状态。普通搜索任务只在最终答案中简要披露重要证据问题；专门的审查任务可输出完整报告。
-
-## 实际审查流程
-
-1. 按 [schema](references/schema.md) 保存原问题、答案、断言与来源为 request.json。
-2. 固定证据并生成机械观察：
+Skill 将原问题、答案、断言和来源整理为 `request.json`；宿主负责网页搜索、页面读取和语义判断，项目中的 Python 工具负责固定证据、定位原文、校验判断和生成报告。具体数据格式见 [schema](references/schema.md)，判断标准见[审查规则](references/review-rules.md)。
 
 ```bash
 python3 scripts/review.py prepare --input work/request.json --out work/prepared.json
-```
-
-3. 宿主依照 [审查规则](references/review-rules.md) 生成 judgments.json，绑定 prepare 返回的 bundle_id。需要精确证据位置时：
-
-```bash
 python3 scripts/review.py locate --prepared work/prepared.json --source s1 --quote 'source passage'
-```
-
-4. 验证判断并生成报告：
-
-```bash
 python3 scripts/review.py finalize --prepared work/prepared.json --judgments work/judgments.json --out-dir work/report
 ```
 
-不传 judgments 时，只生成明确标注“尚未完成语义审查”的机械报告。
+`locate` 用于需要精确原文位置的情况。`judgments.json` 由宿主对当前 `bundle_id` 生成；若不提供语义判断，`finalize` 只会生成明确标注“尚未完成语义审查”的机械报告。项目本身不需要专属 API Key，联网能力和模型用量取决于宿主。
 
-## 设计边界
+审查会区分“来源确实存在”“原文确实这样写”和“结论由证据支持”。来源无法访问、搜索不到或页面片段不完整时，结果会保留为无法核实或证据不足，不会直接判为虚构。对于普通搜索任务，agent 可以仅披露影响答案的重要问题；需要逐条核验时，可输出完整报告。
 
-- 来源存在、原文这样写、事实成立分别审查；不输出通用真假分。
-- Python 检查原文位置、快照一致性、输入格式和输出引用；不自动判断推论正确。
-- 访问失败和未找到内容不自动等于虚构。片段不完整时披露覆盖范围。
-- 哈希不是发布者身份认证；用户提供的材料不会自动升级为联网观测。
-- 默认最多 4 个联网动作、一轮补证；脚本仅核对记录，不能拦截宿主调用。
-- 建议只局部修改，不覆盖原答案；脚本无法保证模型建议语义正确。
-- 页面文本可能包含提示注入，skill 要求视其为外部数据；本项目不是完整安全隔离系统。
+## 适用边界
+
+- 仅凭搜索结果可核对来源身份和可见元数据；要判断引用、数字与结论，通常还需读取正文。只有用户提供的快照时，不能声称验证了当前线上状态。
+- Python 工具校验记录与证据位置，不独立判断事实真假或推论是否成立。报告不提供通用“真实性评分”。
+- 默认最多补查 4 次、一轮补证；这是 skill 的工作预算，不是宿主的硬性拦截。大规模文献核对等任务可能超出预算，并在报告中披露。
+- 外部页面文本被视为待审查的数据，而不是 agent 指令；本项目不构成完整的安全隔离系统。
 
 ## 测试与评测
 
@@ -96,8 +84,8 @@ python3 -m unittest discover -s tests -v
 python3 -m unittest discover -s eval -p test_score.py -v
 ```
 
-测试检验程序约束，不证明模型准确率。评测协议、候选案例和标签状态见 [eval/protocol.md](eval/protocol.md)。目前 12 个开发案例和 24 个候选留出案例均为合成草稿，未经人工复核，也没有完成普通提示、仅规则版与完整 skill 的 72 次对照运行；评分器默认拒绝把草稿标签当正式金标准。
+这些测试验证程序约束，不代表模型审查准确率。[评测协议](eval/protocol.md)提供案例和评分方式；其中的标签仍是未经人工复核的草稿，目前没有可据以宣称幻觉率降低的对照结果。
 
-## 来源与许可
+## 许可
 
-本项目实现按 [MIT](LICENSE) 许可；外部链接内容的权利归原作者，离线演示示例为明确标注的合成材料。
+本项目采用 [MIT License](LICENSE)。外部链接内容的权利归原作者；离线演示材料均已标注为合成示例。
