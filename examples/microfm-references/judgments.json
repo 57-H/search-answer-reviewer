@@ -1,0 +1,820 @@
+{
+  "schema_version": 1,
+  "bundle_id": "fdd4b53b07e6cbd0e675bbee540b4e54429f13740482ccc2f67e88cf2525a3f1",
+  "reviewer": {
+    "kind": "host_model",
+    "model": null
+  },
+  "findings": [
+    {
+      "claim_id": "c1",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s1",
+          "text_sha256": "8316af4c80839b5868f7521dfa9f2a4c5dc2ac1ed2617e6adfa9e06fa760f1a7",
+          "start": 0,
+          "end": 105,
+          "quote": "Two-color nanoscopy of three-dimensional volumes by 4Pi detection of stochastically switched fluorophores"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c2",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s2",
+          "text_sha256": "26f1965f4d211bc82d62bb398c065c570a71b3472ff3e555b9ecaaf4978661ad",
+          "start": 0,
+          "end": 88,
+          "quote": "Effect of depth dependent spherical aberrations in 3D structured illumination microscopy"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c3",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s3",
+          "text_sha256": "933b02843147d8e796d923bfc068fd76e70ecbe5290ea3f757c025e3a9e46b21",
+          "start": 0,
+          "end": 68,
+          "quote": "Continuous-Time Flows for Efficient Inference and Density Estimation"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c4",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s4",
+          "text_sha256": "cd5c248b26cbfc9560c4bcefe5abccb3f0ffdc4700e8ccd774f4563ca0c96a2d",
+          "start": 0,
+          "end": 111,
+          "quote": "Three-dimensional residual channel attention networks denoise and sharpen fluorescence microscopy image volumes"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c5",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s5",
+          "text_sha256": "0344d0a00704b8700906a158353935ffcc1693923d1b984613881b4695eea2e2",
+          "start": 0,
+          "end": 83,
+          "quote": "Whole-animal functional and developmental imaging with isotropic spatial resolution"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c6",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s6",
+          "text_sha256": "7a5b9bffdc6fb1a117ffcaf7d6affc4d24069fb1da1a41cb43de80cca65ad8c7",
+          "start": 0,
+          "end": 86,
+          "quote": "Leveraging Classic Deconvolution and Feature Extraction in Zero-Shot Image Restoration"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c7",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s7",
+          "text_sha256": "e66cc2f370959dc1bb5314cd59a6709aeec12ca0265b829fe22bbc36ac83d5f4",
+          "start": 0,
+          "end": 140,
+          "quote": "Minutes-timescale 3D isotropic imaging of entire organs at subcellular resolution by content-aware compressed-sensing light-sheet microscopy"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c8",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s8",
+          "text_sha256": "0968679b4203a53c985a962d0f6b5ce0503bc7256c3a6ec532e39b26df4432f2",
+          "start": 0,
+          "end": 69,
+          "quote": "Rapid image deconvolution and multiview fusion for optical microscopy"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c9",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s9",
+          "text_sha256": "5976dd19a2816c07cf2b97b7127091570585172ff1b6057424c28154f8bd582a",
+          "start": 0,
+          "end": 121,
+          "quote": "Rapid 3D isotropic imaging of whole organ with double-ring light-sheet microscopy and self-learning side-lobe elimination"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c10",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s10",
+          "text_sha256": "545508b1200d8d9efc09a1e45b58480899a096b8768ab098387ec64ec85a1611",
+          "start": 0,
+          "end": 134,
+          "quote": "System- and sample-agnostic isotropic three-dimensional microscopy by weakly physics-informed, domain-shift-resistant axial deblurring"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c11",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s11",
+          "text_sha256": "07a09a20bd4633d9359d5b30fa65d4c91fb6be1df43f0d71600fcae285854ddd",
+          "start": 0,
+          "end": 69,
+          "quote": "Theoretical analysis of numerical aperture increasing lens microscopy"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c12",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s12",
+          "text_sha256": "5958308278f48702ed2e6293a4feb8c5e692e32657044ebd1dafcd134bece4a0",
+          "start": 0,
+          "end": 94,
+          "quote": "Isotropic three-dimensional super-resolution imaging with a self-bending point spread function"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c13",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s13",
+          "text_sha256": "d54a547ba842678786e395f5790aa470e7f6e36cdb682e5222d6516590e732cc",
+          "start": 0,
+          "end": 102,
+          "quote": "BOE-ViT: Boosting Orientation Estimation with Equivariance in Self-Supervised 3D Subtomogram Alignment"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c14",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s14",
+          "text_sha256": "3126dd04772a081ac7dfa8ddffbab0640ee73ea4fc7b719c58db1bc57c7a0f76",
+          "start": 0,
+          "end": 58,
+          "quote": "Towards Foundation Models for Cryo-ET Subtomogram Analysis"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c15",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s15",
+          "text_sha256": "cccfc6e64f3732c0c764c4c0bc9dfd6f9152dd9a6f639fa71af93dcf9e549582",
+          "start": 0,
+          "end": 95,
+          "quote": "CryoCCD: Conditional Cycle-consistent Diffusion with Biophysical Modeling for Cryo-EM Synthesis"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c16",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s16",
+          "text_sha256": "e94bdc9aaae89a2480c6bf0f433055e4329a52f9a75abf3a8bf49783f88f9448",
+          "start": 0,
+          "end": 78,
+          "quote": "Machine learning guided rapid focusing with sensor-less aberration corrections"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c17",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s17",
+          "text_sha256": "b8e49ba39602da6ed492bbdda93e7573919efb25a752fa15d15c1c89f7bb6444",
+          "start": 0,
+          "end": 64,
+          "quote": "Normalizing Flows: An Introduction and Review of Current Methods"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c18",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s18",
+          "text_sha256": "31c15a1535bb2eac5c45458a8c1acc195999c61ca7c610138d3d4fb24d666f07",
+          "start": 0,
+          "end": 58,
+          "quote": "Multiview light-sheet microscope for rapid in toto imaging"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c19",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s19",
+          "text_sha256": "cbe9c4d43e0c65397f94e82b3ce3566e00319a1b162109697a9df3152ffc4e78",
+          "start": 0,
+          "end": 69,
+          "quote": "Unsupervised content-preserving transformation for optical microscopy"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c20",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s20",
+          "text_sha256": "1de8fe3d9919a17ac6cc518e73cf8d41529824444aed52248843bb93fce10529",
+          "start": 0,
+          "end": 89,
+          "quote": "Incorporating the image formation process into deep learning improves network performance"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c21",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s21",
+          "text_sha256": "5b187403c748fac2a4fa1bd59ce513502609557e46fd901e7dfba6c18f23eb50",
+          "start": 0,
+          "end": 108,
+          "quote": "Volume Tells: Dual Cycle-Consistent Diffusion for 3D Fluorescence Microscopy De-noising and Super-Resolution"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c22",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s22",
+          "text_sha256": "438a2d224e58333cecce2420b7d21f717cd3a03109bfdb2e7c82fc1045234ff9",
+          "start": 0,
+          "end": 37,
+          "quote": "Flow Matching for Generative Modeling"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c23",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s23",
+          "text_sha256": "a5a9e0bb9269c62c15cee46fe60dce45522219d33227fb8dce78bc97e20e46d9",
+          "start": 0,
+          "end": 93,
+          "quote": "Sub-60-nm isotropic 3D super-resolution microscopy through self-interference field excitation"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c24",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s24",
+          "text_sha256": "7376e0eaeb10cb3a83403259bae82f420a450228c3de8298b3e1fad75733c2d9",
+          "start": 0,
+          "end": 70,
+          "quote": "An iterative technique for the rectification of observed distributions"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c25",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s25",
+          "text_sha256": "edc2b3d0af5fbf974fea0c81411b176c9f53089374e71d3e854d5629e9ea4a3b",
+          "start": 0,
+          "end": 96,
+          "quote": "Pretraining a foundation model for generalizable fluorescence microscopy-based image restoration"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c26",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s26",
+          "text_sha256": "febacd89349f7e1bee8329e5afdbd40c1e547d681f3e04c72ae0d8136b99b619",
+          "start": 0,
+          "end": 108,
+          "quote": "Correction of depth-dependent aberrations in 3D single-molecule localization and super-resolution microscopy"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c27",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s27",
+          "text_sha256": "37cd166dd46a7ab273eaa2455b694e715d6bf611f39835fd5b71022847e4b7b7",
+          "start": 0,
+          "end": 41,
+          "quote": "Confocal multiview light-sheet microscopy"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c28",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s28",
+          "text_sha256": "ae48a28b3865f7d83100b6b85b2d0cb2bfc93f1cb087c9886bc7dd975e9e58a4",
+          "start": 0,
+          "end": 93,
+          "quote": "Pupil apodization in digital holographic microscopy for reduction of coherent imaging effects"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c29",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s29",
+          "text_sha256": "6e31a04af7b6396a061a9ec5edcdd6351e926f69022108786aeed5ee71cbd93d",
+          "start": 0,
+          "end": 118,
+          "quote": "Deep self-learning enables fast, high-fidelity isotropic resolution restoration for volumetric fluorescence microscopy"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c30",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s30",
+          "text_sha256": "ef1faeb651d817ecd140ee33eeaf8c31540ad6fd1dc33bfbdd18007b03ee7aa8",
+          "start": 0,
+          "end": 81,
+          "quote": "DiffuseIR: Diffusion Models for Isotropic Reconstruction of 3D Microscopic Images"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c31",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s31",
+          "text_sha256": "6a60412a044fdf05e7ad4b9c70104faae4670f8563975fadeb8306ea079a639d",
+          "start": 0,
+          "end": 102,
+          "quote": "Deep learning enables reference-free isotropic super-resolution for volumetric fluorescence microscopy"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c32",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s32",
+          "text_sha256": "6623421ac8334e2408cead4673c53b765a27da897e8494dea8d488c4ca1aff09",
+          "start": 0,
+          "end": 52,
+          "quote": "Resolution Measures in Molecular Electron Microscopy"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c33",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s33",
+          "text_sha256": "418e1b4ded9d9ecbd3d40be3ea29a31e41d9561e4cb81b9332e0f07b37954565",
+          "start": 0,
+          "end": 94,
+          "quote": "Rapid three-dimensional isotropic imaging of living cells using Bessel beam plane illumination"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c34",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s34",
+          "text_sha256": "753077b4fb2adb1040f707aa9579724e51efd48105fae68dc4ac02fea8e042d7",
+          "start": 0,
+          "end": 118,
+          "quote": "Deep learning-based optical aberration estimation enables offline digital adaptive optics and super-resolution imaging"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c35",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s35",
+          "text_sha256": "0ad8537a36c0e2c1fa89ee70341883c863ab5f37b498a6174e6aac7fd17aba92",
+          "start": 0,
+          "end": 44,
+          "quote": "Neural Blind Deconvolution Using Deep Priors"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c36",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s36",
+          "text_sha256": "876324c85a73fcb9807fcadbccdf178083edc848ac0897120fddd954ccc7c873",
+          "start": 0,
+          "end": 53,
+          "quote": "Bayesian-Based Iterative Method of Image Restoration*"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c37",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s37",
+          "text_sha256": "b8b6f7f83750a669a112dca3c6f818742a998408e1c41525db1db619f96d0d88",
+          "start": 0,
+          "end": 66,
+          "quote": "Implicit Neural Representations with Periodic Activation Functions"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c38",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s38",
+          "text_sha256": "196f428cd0829191168a9d9c34f1ac221fe5076a0c757ff9fcd76b4e61a3a6e5",
+          "start": 0,
+          "end": 82,
+          "quote": "Accuracy of the Gaussian Point Spread Function model in 2D localization microscopy"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c39",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s39",
+          "text_sha256": "c46dfab6adc37ad3fc3807f016d31c0e87ff17b444e845c0ef2a27080350060f",
+          "start": 0,
+          "end": 74,
+          "quote": "Increasing axial resolution of 3D data sets using deconvolution algorithms"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c40",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s40",
+          "text_sha256": "32388bcba448b33c7eb01a96a685f244e8b6080bad7becb2f48c950c8a166c91",
+          "start": 0,
+          "end": 60,
+          "quote": "A Workingperson’s Guide to Deconvolution in Light Microscopy"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c41",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s41",
+          "text_sha256": "2313df7888cbc7f0551c410dc6490a11f8c7d03691cd2eeade7b849e5d643cc4",
+          "start": 0,
+          "end": 97,
+          "quote": "Isotropic Reconstruction of 3D Fluorescence Microscopy Images Using Convolutional Neural Networks"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c42",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s42",
+          "text_sha256": "395b291452241c26756e54d4529a61c4a9d1d9c94fb5007b593fe140537bc4dd",
+          "start": 0,
+          "end": 78,
+          "quote": "Content-aware image restoration: pushing the limits of fluorescence microscopy"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c43",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s43",
+          "text_sha256": "fa1f8a0261137b1baf48eefdb2c1d503e7ecc527ca163bc8dcdd17e966695404",
+          "start": 0,
+          "end": 86,
+          "quote": "A Latent Space of Stochastic Diffusion Models for Zero-Shot Image Editing and Guidance"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c44",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s44",
+          "text_sha256": "df5610d08909742df15b884d1c46f8a539d94547a0dccb29136212679b8308d4",
+          "start": 0,
+          "end": 76,
+          "quote": "Consistency Flow Matching: Defining Straight Flows with Velocity Consistency"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    },
+    {
+      "claim_id": "c45",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s45",
+          "text_sha256": "b5f53ff9b4a3a48fa5ffd9b0d9aaa92e3ae5ba83bb97871d12ac9bb3f8adda3c",
+          "start": 0,
+          "end": 79,
+          "quote": "Unpaired Image-to-Image Translation Using Cycle-Consistent Adversarial Networks"
+        }
+      ],
+      "action_ids": [],
+      "reason": "OpenAlex 稳定标识符记录中的标题与 PDF 参考文献标题一致；大小写、连字符或英式拼写差异不改变文献身份。",
+      "suggested_text": null,
+      "unresolved": []
+    }
+  ]
+}

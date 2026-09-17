@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "bundle_id": "ae3e73f12b60c1e2783ca23f6c97b1ff257068ea65bb2fe0a3ef965ef4b01756",
+  "reviewer": {
+    "kind": "saved_demo",
+    "model": null
+  },
+  "findings": [
+    {
+      "claim_id": "c1",
+      "verdict": "insufficient_evidence",
+      "issue_codes": [
+        "overclaim"
+      ],
+      "evidence": [
+        {
+          "source_id": "s1",
+          "text_sha256": "b1ad85cc28666f9627a55815af5b9c26d322f39e2dc29d5dae5e55fbaa0e0d6b",
+          "start": 0,
+          "end": 32,
+          "quote": "Alpha supports local deployment."
+        }
+      ],
+      "action_ids": [],
+      "reason": "Local deployment does not establish absence of external services.",
+      "suggested_text": "Alpha supports local deployment.",
+      "unresolved": [
+        "The supplied text does not describe external service dependencies."
+      ]
+    }
+  ]
+}

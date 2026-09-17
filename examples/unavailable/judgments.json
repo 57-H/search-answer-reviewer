@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "bundle_id": "9bbf1d2e7f3616a9a3e5170a4aea41006b04b9d693e7adf219b82e5c81255084",
+  "reviewer": {
+    "kind": "saved_demo",
+    "model": null
+  },
+  "findings": [
+    {
+      "claim_id": "c1",
+      "verdict": "unverifiable",
+      "issue_codes": [
+        "source_unavailable"
+      ],
+      "evidence": [],
+      "action_ids": [
+        "a1"
+      ],
+      "reason": "This synthetic read failed with timeout; no factual contradiction is established.",
+      "suggested_text": null,
+      "unresolved": [
+        "The recorded read timed out; source existence and offline behavior are unresolved."
+      ]
+    }
+  ]
+}

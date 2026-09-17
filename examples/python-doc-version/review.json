@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "bundle_id": "c5bb164ade53cd3f413e8a1b03ddd96234ad4767a3026975a75132932c1dcf14",
+  "scope": {
+    "mode": "answer",
+    "evidence_mode": "host_web",
+    "reference_time": "2026-09-17T03:48:31+00:00",
+    "excluded": [],
+    "semantic_review_status": "complete",
+    "reviewer": {
+      "kind": "host_model",
+      "model": null
+    },
+    "recorded_network_actions": 2,
+    "within_default_action_budget": true,
+    "enforcement": "host_workflow_and_recorded_actions_only"
+  },
+  "question": "Audit the claimed version or source identity against the obtained Python documentation.",
+  "original_answer": "Python 3.10 first added the deterministic parameter.",
+  "sources": [
+    {
+      "id": "s1",
+      "requested_url": "https://docs.python.org/3.10/library/sqlite3.html",
+      "resolved_url": "https://docs.python.org/3.10/library/sqlite3.html",
+      "kind": "page",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "sqlite3 — DB-API 2.0 interface for SQLite databases — Python 3.10.21 documentation",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "sqlite3 — DB-API 2.0 interface for SQLite databases — Python 3.10.21 documentation",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "text": "New in version 3.8: The deterministic parameter.",
+      "access": "readable",
+      "coverage": "partial",
+      "retrieved_at": "2026-09-17T03:48:31+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "web open turn14view0; answer line 318, results title",
+      "text_sha256": "fc534b4da9e5c5390dc034d2296f7aeedb1c9a93621a7cbb20897568348754ff"
+    }
+  ],
+  "network_actions": [
+    {
+      "id": "a1",
+      "kind": "search",
+      "target": "site:docs.python.org/3/library/sqlite3.html Python sqlite3 create_function deterministic parameter version",
+      "status": "success",
+      "observed_at": "2026-09-17T03:48:31+00:00",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "id": "a2",
+      "kind": "read",
+      "target": "https://docs.python.org/3.10/library/sqlite3.html",
+      "status": "success",
+      "observed_at": "2026-09-17T03:48:31+00:00",
+      "source_ids": [
+        "s1"
+      ]
+    }
+  ],
+  "mechanical_checks": [
+    {
+      "claim_id": null,
+      "source_id": "s1",
+      "code": "limited_coverage",
+      "detail": "Coverage=partial; a missing passage may be outside the captured text."
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "c1",
+      "verdict": "contradicted",
+      "issue_codes": [
+        "scope_mismatch"
+      ],
+      "evidence": [
+        {
+          "source_id": "s1",
+          "text_sha256": "fc534b4da9e5c5390dc034d2296f7aeedb1c9a93621a7cbb20897568348754ff",
+          "start": 0,
+          "end": 48,
+          "quote": "New in version 3.8: The deterministic parameter."
+        }
+      ],
+      "action_ids": [
+        "a2"
+      ],
+      "reason": "The obtained Python 3.10 documentation says the deterministic parameter was new in Python 3.8, contradicting the claimed first introduction in 3.10.",
+      "suggested_text": "The Python sqlite3 deterministic parameter was added in Python 3.8.",
+      "unresolved": [],
+      "claim": {
+        "id": "c1",
+        "text": "Python 3.10 first added the deterministic parameter.",
+        "anchor": {
+          "target": "answer",
+          "source_id": null,
+          "field": null,
+          "start": 0,
+          "end": 52
+        },
+        "category": "scope",
+        "importance": "decision",
+        "source_ids": [
+          "s1"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "extracted_claims": 1,
+    "reviewed": 1,
+    "conflicted": 0,
+    "contradicted": 1,
+    "insufficient_evidence": 0,
+    "not_reviewed": 0,
+    "out_of_scope": 0,
+    "supported": 0,
+    "unverifiable": 0
+  }
+}

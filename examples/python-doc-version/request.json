@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "mode": "answer",
+  "evidence_mode": "host_web",
+  "reference_time": "2026-09-17T03:48:31+00:00",
+  "question": "Audit the claimed version or source identity against the obtained Python documentation.",
+  "answer": "Python 3.10 first added the deterministic parameter.",
+  "sources": [
+    {
+      "id": "s1",
+      "requested_url": "https://docs.python.org/3.10/library/sqlite3.html",
+      "resolved_url": "https://docs.python.org/3.10/library/sqlite3.html",
+      "kind": "page",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "sqlite3 — DB-API 2.0 interface for SQLite databases — Python 3.10.21 documentation",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "sqlite3 — DB-API 2.0 interface for SQLite databases — Python 3.10.21 documentation",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "text": "New in version 3.8: The deterministic parameter.",
+      "access": "readable",
+      "coverage": "partial",
+      "retrieved_at": "2026-09-17T03:48:31+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "web open turn14view0; answer line 318, results title"
+    }
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "text": "Python 3.10 first added the deterministic parameter.",
+      "anchor": {
+        "target": "answer",
+        "source_id": null,
+        "field": null,
+        "start": 0,
+        "end": 52
+      },
+      "category": "scope",
+      "importance": "decision",
+      "source_ids": [
+        "s1"
+      ]
+    }
+  ],
+  "excluded": [],
+  "network_actions": [
+    {
+      "id": "a1",
+      "kind": "search",
+      "target": "site:docs.python.org/3/library/sqlite3.html Python sqlite3 create_function deterministic parameter version",
+      "status": "success",
+      "observed_at": "2026-09-17T03:48:31+00:00",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "id": "a2",
+      "kind": "read",
+      "target": "https://docs.python.org/3.10/library/sqlite3.html",
+      "status": "success",
+      "observed_at": "2026-09-17T03:48:31+00:00",
+      "source_ids": [
+        "s1"
+      ]
+    }
+  ]
+}

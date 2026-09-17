@@ -1,0 +1,2360 @@
+{
+  "schema_version": 1,
+  "mode": "results",
+  "evidence_mode": "host_web",
+  "reference_time": "2026-09-17T09:32:37.587088+00:00",
+  "question": "Locate all 45 references of the supplied MicroFM PDF and verify corresponding scholarly records and links.",
+  "answer": null,
+  "sources": [
+    {
+      "id": "s1",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fnmeth.1583",
+      "resolved_url": "https://doi.org/10.1038/nmeth.1583",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Two-color nanoscopy of three-dimensional volumes by 4Pi detection of stochastically switched fluorophores",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Two-color nanoscopy of three-dimensional volumes by 4Pi detection of stochastically switched fluorophores",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1038/nmeth.1583"
+      },
+      "text": "Two-color nanoscopy of three-dimensional volumes by 4Pi detection of stochastically switched fluorophores\nDOI: 10.1038/nmeth.1583",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:31:46.399287+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fnmeth.1583"
+    },
+    {
+      "id": "s2",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Foe.20.006527",
+      "resolved_url": "https://doi.org/10.1364/oe.20.006527",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Effect of depth dependent spherical aberrations in 3D structured illumination microscopy",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Effect of depth dependent spherical aberrations in 3D structured illumination microscopy",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1364/oe.20.006527"
+      },
+      "text": "Effect of depth dependent spherical aberrations in 3D structured illumination microscopy\nDOI: 10.1364/oe.20.006527",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:31:46.367914+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Foe.20.006527"
+    },
+    {
+      "id": "s3",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.48550%2Farxiv.1709.01179",
+      "resolved_url": "https://doi.org/10.48550/arxiv.1709.01179",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Continuous-time flows for efficient inference and density estimation",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Continuous-Time Flows for Efficient Inference and Density Estimation",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.48550/arxiv.1709.01179"
+      },
+      "text": "Continuous-Time Flows for Efficient Inference and Density Estimation\nDOI: 10.48550/arxiv.1709.01179",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:31:46.236583+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.48550%2Farxiv.1709.01179"
+    },
+    {
+      "id": "s4",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41592-021-01155-x",
+      "resolved_url": "https://doi.org/10.1038/s41592-021-01155-x",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Three-dimensional residual channel attention networks denoise and sharpen fluorescence microscopy image volumes",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Three-dimensional residual channel attention networks denoise and sharpen fluorescence microscopy image volumes",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1038/s41592-021-01155-x"
+      },
+      "text": "Three-dimensional residual channel attention networks denoise and sharpen fluorescence microscopy image volumes\nDOI: 10.1038/s41592-021-01155-x",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:31:48.204656+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41592-021-01155-x"
+    },
+    {
+      "id": "s5",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fnmeth.3632",
+      "resolved_url": "https://doi.org/10.1038/nmeth.3632",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Whole-animal functional and developmental imaging with isotropic spatial resolution",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Whole-animal functional and developmental imaging with isotropic spatial resolution",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1038/nmeth.3632"
+      },
+      "text": "Whole-animal functional and developmental imaging with isotropic spatial resolution\nDOI: 10.1038/nmeth.3632",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:31:48.459334+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fnmeth.3632"
+    },
+    {
+      "id": "s6",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1109%2Ficcvw60793.2023.00419",
+      "resolved_url": "https://doi.org/10.1109/iccvw60793.2023.00419",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Leveraging classic deconvolution and feature extraction in zero-shot image restoration",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Leveraging Classic Deconvolution and Feature Extraction in Zero-Shot Image Restoration",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1109/iccvw60793.2023.00419"
+      },
+      "text": "Leveraging Classic Deconvolution and Feature Extraction in Zero-Shot Image Restoration\nDOI: 10.1109/iccvw60793.2023.00419",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:31:48.350571+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1109%2Ficcvw60793.2023.00419"
+    },
+    {
+      "id": "s7",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41467-020-20329-3",
+      "resolved_url": "https://doi.org/10.1038/s41467-020-20329-3",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Minutes-timescale 3D isotropic imaging of entire organs at subcellular resolution by content-aware compressed-sensing light-sheet microscopy",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Minutes-timescale 3D isotropic imaging of entire organs at subcellular resolution by content-aware compressed-sensing light-sheet microscopy",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1038/s41467-020-20329-3"
+      },
+      "text": "Minutes-timescale 3D isotropic imaging of entire organs at subcellular resolution by content-aware compressed-sensing light-sheet microscopy\nDOI: 10.1038/s41467-020-20329-3",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:31:50.323839+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41467-020-20329-3"
+    },
+    {
+      "id": "s8",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41587-020-0560-x",
+      "resolved_url": "https://doi.org/10.1038/s41587-020-0560-x",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Rapid image deconvolution and multiview fusion for optical microscopy",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Rapid image deconvolution and multiview fusion for optical microscopy",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1038/s41587-020-0560-x"
+      },
+      "text": "Rapid image deconvolution and multiview fusion for optical microscopy\nDOI: 10.1038/s41587-020-0560-x",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:31:50.555543+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41587-020-0560-x"
+    },
+    {
+      "id": "s9",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Fboe.505217",
+      "resolved_url": "https://doi.org/10.1364/boe.505217",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Rapid 3D isotropic imaging of whole organ with double-ring light-sheet microscopy and self-learning side-lobe elimination",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Rapid 3D isotropic imaging of whole organ with double-ring light-sheet microscopy and self-learning side-lobe elimination",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1364/boe.505217"
+      },
+      "text": "Rapid 3D isotropic imaging of whole organ with double-ring light-sheet microscopy and self-learning side-lobe elimination\nDOI: 10.1364/boe.505217",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:31:50.365357+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Fboe.505217"
+    },
+    {
+      "id": "s10",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41467-025-56078-4",
+      "resolved_url": "https://doi.org/10.1038/s41467-025-56078-4",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "System- and sample-agnostic isotropic three-dimensional microscopy by weakly physics-informed, domain-shift-resistant axial deblurring",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "System- and sample-agnostic isotropic three-dimensional microscopy by weakly physics-informed, domain-shift-resistant axial deblurring",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1038/s41467-025-56078-4"
+      },
+      "text": "System- and sample-agnostic isotropic three-dimensional microscopy by weakly physics-informed, domain-shift-resistant axial deblurring\nDOI: 10.1038/s41467-025-56078-4",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:31:52.387084+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41467-025-56078-4"
+    },
+    {
+      "id": "s11",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1063%2F1.1858060",
+      "resolved_url": "https://doi.org/10.1063/1.1858060",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Theoretical analysis of numerical aperture increasing lens microscopy",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Theoretical analysis of numerical aperture increasing lens microscopy",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1063/1.1858060"
+      },
+      "text": "Theoretical analysis of numerical aperture increasing lens microscopy\nDOI: 10.1063/1.1858060",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:31:52.200594+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1063%2F1.1858060"
+    },
+    {
+      "id": "s12",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fnphoton.2014.13",
+      "resolved_url": "https://doi.org/10.1038/nphoton.2014.13",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Isotropic three-dimensional super-resolution imaging with a self-bending point spread function",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Isotropic three-dimensional super-resolution imaging with a self-bending point spread function",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1038/nphoton.2014.13"
+      },
+      "text": "Isotropic three-dimensional super-resolution imaging with a self-bending point spread function\nDOI: 10.1038/nphoton.2014.13",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:31:52.556486+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fnphoton.2014.13"
+    },
+    {
+      "id": "s13",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1109%2Fcvpr52734.2025.02733",
+      "resolved_url": "https://doi.org/10.1109/cvpr52734.2025.02733",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Boe-vit: Boosting orientation estimation with equivariance in self-supervised 3D subtomogram alignment",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "BOE-ViT: Boosting Orientation Estimation with Equivariance in Self-Supervised 3D Subtomogram Alignment",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1109/cvpr52734.2025.02733"
+      },
+      "text": "BOE-ViT: Boosting Orientation Estimation with Equivariance in Self-Supervised 3D Subtomogram Alignment\nDOI: 10.1109/cvpr52734.2025.02733",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:31:54.747261+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1109%2Fcvpr52734.2025.02733"
+    },
+    {
+      "id": "s14",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.48550%2Farxiv.2509.24311",
+      "resolved_url": "https://doi.org/10.48550/arxiv.2509.24311",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Towards foundation models for cryo-ET subtomogram analysis",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Towards Foundation Models for Cryo-ET Subtomogram Analysis",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.48550/arxiv.2509.24311"
+      },
+      "text": "Towards Foundation Models for Cryo-ET Subtomogram Analysis\nDOI: 10.48550/arxiv.2509.24311",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:31:55.276264+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.48550%2Farxiv.2509.24311"
+    },
+    {
+      "id": "s15",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.48550%2Farxiv.2505.23444",
+      "resolved_url": "https://doi.org/10.48550/arxiv.2505.23444",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "CryoCCD: Conditional cycle-consistent diffusion with biophysical modeling for cryo-EM synthesis",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "CryoCCD: Conditional Cycle-consistent Diffusion with Biophysical Modeling for Cryo-EM Synthesis",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.48550/arxiv.2505.23444"
+      },
+      "text": "CryoCCD: Conditional Cycle-consistent Diffusion with Biophysical Modeling for Cryo-EM Synthesis\nDOI: 10.48550/arxiv.2505.23444",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:31:55.800263+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.48550%2Farxiv.2505.23444"
+    },
+    {
+      "id": "s16",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Foe.26.030162",
+      "resolved_url": "https://doi.org/10.1364/oe.26.030162",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Machine learning guided rapid focusing with sensor-less aberration corrections",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Machine learning guided rapid focusing with sensor-less aberration corrections",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1364/oe.26.030162"
+      },
+      "text": "Machine learning guided rapid focusing with sensor-less aberration corrections\nDOI: 10.1364/oe.26.030162",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:31:56.880329+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Foe.26.030162"
+    },
+    {
+      "id": "s17",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1109%2Ftpami.2020.2992934",
+      "resolved_url": "https://doi.org/10.1109/tpami.2020.2992934",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Normalizing flows: An introduction and review of current methods",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Normalizing Flows: An Introduction and Review of Current Methods",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1109/tpami.2020.2992934"
+      },
+      "text": "Normalizing Flows: An Introduction and Review of Current Methods\nDOI: 10.1109/tpami.2020.2992934",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:31:57.162249+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1109%2Ftpami.2020.2992934"
+    },
+    {
+      "id": "s18",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fnmeth.2064",
+      "resolved_url": "https://doi.org/10.1038/nmeth.2064",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Multiview light-sheet microscope for rapid in toto imaging",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Multiview light-sheet microscope for rapid in toto imaging",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1038/nmeth.2064"
+      },
+      "text": "Multiview light-sheet microscope for rapid in toto imaging\nDOI: 10.1038/nmeth.2064",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:31:57.755572+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fnmeth.2064"
+    },
+    {
+      "id": "s19",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41377-021-00484-y",
+      "resolved_url": "https://doi.org/10.1038/s41377-021-00484-y",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Unsupervised content-preserving transformation for optical microscopy",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Unsupervised content-preserving transformation for optical microscopy",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1038/s41377-021-00484-y"
+      },
+      "text": "Unsupervised content-preserving transformation for optical microscopy\nDOI: 10.1038/s41377-021-00484-y",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:31:58.945336+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41377-021-00484-y"
+    },
+    {
+      "id": "s20",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41592-022-01652-7",
+      "resolved_url": "https://doi.org/10.1038/s41592-022-01652-7",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Incorporating the image formation process into deep learning improves network performance",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Incorporating the image formation process into deep learning improves network performance",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1038/s41592-022-01652-7"
+      },
+      "text": "Incorporating the image formation process into deep learning improves network performance\nDOI: 10.1038/s41592-022-01652-7",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:31:59.282886+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41592-022-01652-7"
+    },
+    {
+      "id": "s21",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1109%2Fcvpr52734.2025.01500",
+      "resolved_url": "https://doi.org/10.1109/cvpr52734.2025.01500",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Volume tells: Dual cycle-consistent diffusion for 3D fluorescence microscopy de-noising and super-resolution",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Volume Tells: Dual Cycle-Consistent Diffusion for 3D Fluorescence Microscopy De-noising and Super-Resolution",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1109/cvpr52734.2025.01500"
+      },
+      "text": "Volume Tells: Dual Cycle-Consistent Diffusion for 3D Fluorescence Microscopy De-noising and Super-Resolution\nDOI: 10.1109/cvpr52734.2025.01500",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:31:59.588753+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1109%2Fcvpr52734.2025.01500"
+    },
+    {
+      "id": "s22",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.48550%2Farxiv.2210.02747",
+      "resolved_url": "https://doi.org/10.48550/arxiv.2210.02747",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Flow matching for generative modeling",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Flow Matching for Generative Modeling",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.48550/arxiv.2210.02747"
+      },
+      "text": "Flow Matching for Generative Modeling\nDOI: 10.48550/arxiv.2210.02747",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:00.845731+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.48550%2Farxiv.2210.02747"
+    },
+    {
+      "id": "s23",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Foptica.530893",
+      "resolved_url": "https://doi.org/10.1364/optica.530893",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Sub-60-nm isotropic 3D super-resolution microscopy through self-interference field excitation",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Sub-60-nm isotropic 3D super-resolution microscopy through self-interference field excitation",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1364/optica.530893"
+      },
+      "text": "Sub-60-nm isotropic 3D super-resolution microscopy through self-interference field excitation\nDOI: 10.1364/optica.530893",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:01.293184+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Foptica.530893"
+    },
+    {
+      "id": "s24",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1086%2F111605",
+      "resolved_url": "https://doi.org/10.1086/111605",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "An iterative technique for the rectification of observed distributions",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "An iterative technique for the rectification of observed distributions",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1086/111605"
+      },
+      "text": "An iterative technique for the rectification of observed distributions\nDOI: 10.1086/111605",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:01.320465+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1086%2F111605"
+    },
+    {
+      "id": "s25",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41592-024-02244-3",
+      "resolved_url": "https://doi.org/10.1038/s41592-024-02244-3",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Pre-training a foundation model for generalizable fluorescence microscopy-based image restoration",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Pretraining a foundation model for generalizable fluorescence microscopy-based image restoration",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1038/s41592-024-02244-3"
+      },
+      "text": "Pretraining a foundation model for generalizable fluorescence microscopy-based image restoration\nDOI: 10.1038/s41592-024-02244-3",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:02.877047+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41592-024-02244-3"
+    },
+    {
+      "id": "s26",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Fol.39.000275",
+      "resolved_url": "https://doi.org/10.1364/ol.39.000275",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Correction of depth-dependent aberrations in 3D single-molecule localization and super-resolution microscopy",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Correction of depth-dependent aberrations in 3D single-molecule localization and super-resolution microscopy",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1364/ol.39.000275"
+      },
+      "text": "Correction of depth-dependent aberrations in 3D single-molecule localization and super-resolution microscopy\nDOI: 10.1364/ol.39.000275",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:03.525024+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Fol.39.000275"
+    },
+    {
+      "id": "s27",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fncomms9881",
+      "resolved_url": "https://doi.org/10.1038/ncomms9881",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Confocal multiview light-sheet microscopy",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Confocal multiview light-sheet microscopy",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1038/ncomms9881"
+      },
+      "text": "Confocal multiview light-sheet microscopy\nDOI: 10.1038/ncomms9881",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:03.456905+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fncomms9881"
+    },
+    {
+      "id": "s28",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Foptcon.460029",
+      "resolved_url": "https://doi.org/10.1364/optcon.460029",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Pupil apodization in digital holographic microscopy for reduction of coherent imaging effects",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Pupil apodization in digital holographic microscopy for reduction of coherent imaging effects",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1364/optcon.460029"
+      },
+      "text": "Pupil apodization in digital holographic microscopy for reduction of coherent imaging effects\nDOI: 10.1364/optcon.460029",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:04.971094+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Foptcon.460029"
+    },
+    {
+      "id": "s29",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41377-023-01230-2",
+      "resolved_url": "https://doi.org/10.1038/s41377-023-01230-2",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Deep self-learning enables fast, high-fidelity isotropic resolution restoration for volumetric fluorescence microscopy",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Deep self-learning enables fast, high-fidelity isotropic resolution restoration for volumetric fluorescence microscopy",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1038/s41377-023-01230-2"
+      },
+      "text": "Deep self-learning enables fast, high-fidelity isotropic resolution restoration for volumetric fluorescence microscopy\nDOI: 10.1038/s41377-023-01230-2",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:05.538987+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41377-023-01230-2"
+    },
+    {
+      "id": "s30",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-031-43999-5_31",
+      "resolved_url": "https://doi.org/10.1007/978-3-031-43999-5_31",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "DiffuseIR: diffusion models for isotropic reconstruction of 3D microscopic images",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "DiffuseIR: Diffusion Models for Isotropic Reconstruction of 3D Microscopic Images",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1007/978-3-031-43999-5_31"
+      },
+      "text": "DiffuseIR: Diffusion Models for Isotropic Reconstruction of 3D Microscopic Images\nDOI: 10.1007/978-3-031-43999-5_31",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:05.439236+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-031-43999-5_31"
+    },
+    {
+      "id": "s31",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41467-022-30949-6",
+      "resolved_url": "https://doi.org/10.1038/s41467-022-30949-6",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Deep learning enables reference-free isotropic super-resolution for volumetric fluorescence microscopy",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Deep learning enables reference-free isotropic super-resolution for volumetric fluorescence microscopy",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1038/s41467-022-30949-6"
+      },
+      "text": "Deep learning enables reference-free isotropic super-resolution for volumetric fluorescence microscopy\nDOI: 10.1038/s41467-022-30949-6",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:07.040404+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41467-022-30949-6"
+    },
+    {
+      "id": "s32",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1016%2Fs0076-6879%2810%2982003-8",
+      "resolved_url": "https://doi.org/10.1016/s0076-6879(10)82003-8",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Resolution measures in molecular electron microscopy",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Resolution Measures in Molecular Electron Microscopy",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1016/s0076-6879(10)82003-8"
+      },
+      "text": "Resolution Measures in Molecular Electron Microscopy\nDOI: 10.1016/s0076-6879(10)82003-8",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:07.196858+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1016%2Fs0076-6879%2810%2982003-8"
+    },
+    {
+      "id": "s33",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fnmeth.1586",
+      "resolved_url": "https://doi.org/10.1038/nmeth.1586",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Rapid three-dimensional isotropic imaging of living cells using Bessel beam plane illumination",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Rapid three-dimensional isotropic imaging of living cells using Bessel beam plane illumination",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1038/nmeth.1586"
+      },
+      "text": "Rapid three-dimensional isotropic imaging of living cells using Bessel beam plane illumination\nDOI: 10.1038/nmeth.1586",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:07.603081+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fnmeth.1586"
+    },
+    {
+      "id": "s34",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Fprj.506778",
+      "resolved_url": "https://doi.org/10.1364/prj.506778",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Deep learning-based optical aberration estimation enables offline digital adaptive optics and super-resolution imaging",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Deep learning-based optical aberration estimation enables offline digital adaptive optics and super-resolution imaging",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1364/prj.506778"
+      },
+      "text": "Deep learning-based optical aberration estimation enables offline digital adaptive optics and super-resolution imaging\nDOI: 10.1364/prj.506778",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:08.980685+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Fprj.506778"
+    },
+    {
+      "id": "s35",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1109%2Fcvpr42600.2020.00340",
+      "resolved_url": "https://doi.org/10.1109/cvpr42600.2020.00340",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Neural blind deconvolution using deep priors",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Neural Blind Deconvolution Using Deep Priors",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1109/cvpr42600.2020.00340"
+      },
+      "text": "Neural Blind Deconvolution Using Deep Priors\nDOI: 10.1109/cvpr42600.2020.00340",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:09.314296+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1109%2Fcvpr42600.2020.00340"
+    },
+    {
+      "id": "s36",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Fjosa.62.000055",
+      "resolved_url": "https://doi.org/10.1364/josa.62.000055",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Bayesian-based iterative method of image restoration",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Bayesian-Based Iterative Method of Image Restoration*",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1364/josa.62.000055"
+      },
+      "text": "Bayesian-Based Iterative Method of Image Restoration*\nDOI: 10.1364/josa.62.000055",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:09.625187+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Fjosa.62.000055"
+    },
+    {
+      "id": "s37",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.48550%2Farxiv.2006.09661",
+      "resolved_url": "https://doi.org/10.48550/arxiv.2006.09661",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Implicit neural representations with periodic activation functions",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Implicit Neural Representations with Periodic Activation Functions",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.48550/arxiv.2006.09661"
+      },
+      "text": "Implicit Neural Representations with Periodic Activation Functions\nDOI: 10.48550/arxiv.2006.09661",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:11.002990+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.48550%2Farxiv.2006.09661"
+    },
+    {
+      "id": "s38",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Foe.18.024461",
+      "resolved_url": "https://doi.org/10.1364/oe.18.024461",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Accuracy of the Gaussian point spread function model in 2D localization microscopy",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Accuracy of the Gaussian Point Spread Function model in 2D localization microscopy",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1364/oe.18.024461"
+      },
+      "text": "Accuracy of the Gaussian Point Spread Function model in 2D localization microscopy\nDOI: 10.1364/oe.18.024461",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:11.231325+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Foe.18.024461"
+    },
+    {
+      "id": "s39",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1111%2Fj.1365-2818.2011.03503.x",
+      "resolved_url": "https://doi.org/10.1111/j.1365-2818.2011.03503.x",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Increasing axial resolution of 3D datasets using deconvolution algorithms",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Increasing axial resolution of 3D data sets using deconvolution algorithms",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1111/j.1365-2818.2011.03503.x"
+      },
+      "text": "Increasing axial resolution of 3D data sets using deconvolution algorithms\nDOI: 10.1111/j.1365-2818.2011.03503.x",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:11.531628+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1111%2Fj.1365-2818.2011.03503.x"
+    },
+    {
+      "id": "s40",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.2144%2F01315bi01",
+      "resolved_url": "https://doi.org/10.2144/01315bi01",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "A working person's guide to deconvolution in light microscopy",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "A Workingperson’s Guide to Deconvolution in Light Microscopy",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.2144/01315bi01"
+      },
+      "text": "A Workingperson’s Guide to Deconvolution in Light Microscopy\nDOI: 10.2144/01315bi01",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:13.102481+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.2144%2F01315bi01"
+    },
+    {
+      "id": "s41",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-319-66185-8_15",
+      "resolved_url": "https://doi.org/10.1007/978-3-319-66185-8_15",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Isotropic reconstruction of 3D fluorescence microscopy images using convolutional neural networks",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Isotropic Reconstruction of 3D Fluorescence Microscopy Images Using Convolutional Neural Networks",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1007/978-3-319-66185-8_15"
+      },
+      "text": "Isotropic Reconstruction of 3D Fluorescence Microscopy Images Using Convolutional Neural Networks\nDOI: 10.1007/978-3-319-66185-8_15",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:13.172363+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-319-66185-8_15"
+    },
+    {
+      "id": "s42",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41592-018-0216-7",
+      "resolved_url": "https://doi.org/10.1038/s41592-018-0216-7",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Content-aware image restoration: pushing the limits of fluorescence microscopy",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Content-aware image restoration: pushing the limits of fluorescence microscopy",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1038/s41592-018-0216-7"
+      },
+      "text": "Content-aware image restoration: pushing the limits of fluorescence microscopy\nDOI: 10.1038/s41592-018-0216-7",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:13.825680+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41592-018-0216-7"
+    },
+    {
+      "id": "s43",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1109%2Ficcv51070.2023.00678",
+      "resolved_url": "https://doi.org/10.1109/iccv51070.2023.00678",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "A latent space of stochastic diffusion models for zero-shot image editing and guidance",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "A Latent Space of Stochastic Diffusion Models for Zero-Shot Image Editing and Guidance",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1109/iccv51070.2023.00678"
+      },
+      "text": "A Latent Space of Stochastic Diffusion Models for Zero-Shot Image Editing and Guidance\nDOI: 10.1109/iccv51070.2023.00678",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:14.986378+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1109%2Ficcv51070.2023.00678"
+    },
+    {
+      "id": "s44",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.48550%2Farxiv.2407.02398",
+      "resolved_url": "https://doi.org/10.48550/arxiv.2407.02398",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Consistency flow matching: Defining straight flows with velocity consistency",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Consistency Flow Matching: Defining Straight Flows with Velocity Consistency",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.48550/arxiv.2407.02398"
+      },
+      "text": "Consistency Flow Matching: Defining Straight Flows with Velocity Consistency\nDOI: 10.48550/arxiv.2407.02398",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:15.083120+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.48550%2Farxiv.2407.02398"
+    },
+    {
+      "id": "s45",
+      "requested_url": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1109%2Ficcv.2017.244",
+      "resolved_url": "https://doi.org/10.1109/iccv.2017.244",
+      "kind": "metadata_record",
+      "provenance": "host_observation",
+      "declared": {
+        "title": "Unpaired image-to-image translation using cycle-consistent adversarial networks",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Unpaired Image-to-Image Translation Using Cycle-Consistent Adversarial Networks",
+        "publisher": "OpenAlex",
+        "authors": [],
+        "identifier": "10.1109/iccv.2017.244"
+      },
+      "text": "Unpaired Image-to-Image Translation Using Cycle-Consistent Adversarial Networks\nDOI: 10.1109/iccv.2017.244",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": "2026-09-17T09:32:15.935172+00:00",
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1109%2Ficcv.2017.244"
+    }
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "text": "Two-color nanoscopy of three-dimensional volumes by 4Pi detection of stochastically switched fluorophores",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s1",
+        "field": "title",
+        "start": 0,
+        "end": 105
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "id": "c2",
+      "text": "Effect of depth dependent spherical aberrations in 3D structured illumination microscopy",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s2",
+        "field": "title",
+        "start": 0,
+        "end": 88
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s2"
+      ]
+    },
+    {
+      "id": "c3",
+      "text": "Continuous-time flows for efficient inference and density estimation",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s3",
+        "field": "title",
+        "start": 0,
+        "end": 68
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s3"
+      ]
+    },
+    {
+      "id": "c4",
+      "text": "Three-dimensional residual channel attention networks denoise and sharpen fluorescence microscopy image volumes",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s4",
+        "field": "title",
+        "start": 0,
+        "end": 111
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s4"
+      ]
+    },
+    {
+      "id": "c5",
+      "text": "Whole-animal functional and developmental imaging with isotropic spatial resolution",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s5",
+        "field": "title",
+        "start": 0,
+        "end": 83
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "id": "c6",
+      "text": "Leveraging classic deconvolution and feature extraction in zero-shot image restoration",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s6",
+        "field": "title",
+        "start": 0,
+        "end": 86
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "id": "c7",
+      "text": "Minutes-timescale 3D isotropic imaging of entire organs at subcellular resolution by content-aware compressed-sensing light-sheet microscopy",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s7",
+        "field": "title",
+        "start": 0,
+        "end": 140
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s7"
+      ]
+    },
+    {
+      "id": "c8",
+      "text": "Rapid image deconvolution and multiview fusion for optical microscopy",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s8",
+        "field": "title",
+        "start": 0,
+        "end": 69
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "id": "c9",
+      "text": "Rapid 3D isotropic imaging of whole organ with double-ring light-sheet microscopy and self-learning side-lobe elimination",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s9",
+        "field": "title",
+        "start": 0,
+        "end": 121
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s9"
+      ]
+    },
+    {
+      "id": "c10",
+      "text": "System- and sample-agnostic isotropic three-dimensional microscopy by weakly physics-informed, domain-shift-resistant axial deblurring",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s10",
+        "field": "title",
+        "start": 0,
+        "end": 134
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "id": "c11",
+      "text": "Theoretical analysis of numerical aperture increasing lens microscopy",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s11",
+        "field": "title",
+        "start": 0,
+        "end": 69
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s11"
+      ]
+    },
+    {
+      "id": "c12",
+      "text": "Isotropic three-dimensional super-resolution imaging with a self-bending point spread function",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s12",
+        "field": "title",
+        "start": 0,
+        "end": 94
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s12"
+      ]
+    },
+    {
+      "id": "c13",
+      "text": "Boe-vit: Boosting orientation estimation with equivariance in self-supervised 3D subtomogram alignment",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s13",
+        "field": "title",
+        "start": 0,
+        "end": 102
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "id": "c14",
+      "text": "Towards foundation models for cryo-ET subtomogram analysis",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s14",
+        "field": "title",
+        "start": 0,
+        "end": 58
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "id": "c15",
+      "text": "CryoCCD: Conditional cycle-consistent diffusion with biophysical modeling for cryo-EM synthesis",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s15",
+        "field": "title",
+        "start": 0,
+        "end": 95
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s15"
+      ]
+    },
+    {
+      "id": "c16",
+      "text": "Machine learning guided rapid focusing with sensor-less aberration corrections",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s16",
+        "field": "title",
+        "start": 0,
+        "end": 78
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s16"
+      ]
+    },
+    {
+      "id": "c17",
+      "text": "Normalizing flows: An introduction and review of current methods",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s17",
+        "field": "title",
+        "start": 0,
+        "end": 64
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s17"
+      ]
+    },
+    {
+      "id": "c18",
+      "text": "Multiview light-sheet microscope for rapid in toto imaging",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s18",
+        "field": "title",
+        "start": 0,
+        "end": 58
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s18"
+      ]
+    },
+    {
+      "id": "c19",
+      "text": "Unsupervised content-preserving transformation for optical microscopy",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s19",
+        "field": "title",
+        "start": 0,
+        "end": 69
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s19"
+      ]
+    },
+    {
+      "id": "c20",
+      "text": "Incorporating the image formation process into deep learning improves network performance",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s20",
+        "field": "title",
+        "start": 0,
+        "end": 89
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s20"
+      ]
+    },
+    {
+      "id": "c21",
+      "text": "Volume tells: Dual cycle-consistent diffusion for 3D fluorescence microscopy de-noising and super-resolution",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s21",
+        "field": "title",
+        "start": 0,
+        "end": 108
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s21"
+      ]
+    },
+    {
+      "id": "c22",
+      "text": "Flow matching for generative modeling",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s22",
+        "field": "title",
+        "start": 0,
+        "end": 37
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s22"
+      ]
+    },
+    {
+      "id": "c23",
+      "text": "Sub-60-nm isotropic 3D super-resolution microscopy through self-interference field excitation",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s23",
+        "field": "title",
+        "start": 0,
+        "end": 93
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s23"
+      ]
+    },
+    {
+      "id": "c24",
+      "text": "An iterative technique for the rectification of observed distributions",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s24",
+        "field": "title",
+        "start": 0,
+        "end": 70
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s24"
+      ]
+    },
+    {
+      "id": "c25",
+      "text": "Pre-training a foundation model for generalizable fluorescence microscopy-based image restoration",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s25",
+        "field": "title",
+        "start": 0,
+        "end": 97
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s25"
+      ]
+    },
+    {
+      "id": "c26",
+      "text": "Correction of depth-dependent aberrations in 3D single-molecule localization and super-resolution microscopy",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s26",
+        "field": "title",
+        "start": 0,
+        "end": 108
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s26"
+      ]
+    },
+    {
+      "id": "c27",
+      "text": "Confocal multiview light-sheet microscopy",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s27",
+        "field": "title",
+        "start": 0,
+        "end": 41
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s27"
+      ]
+    },
+    {
+      "id": "c28",
+      "text": "Pupil apodization in digital holographic microscopy for reduction of coherent imaging effects",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s28",
+        "field": "title",
+        "start": 0,
+        "end": 93
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s28"
+      ]
+    },
+    {
+      "id": "c29",
+      "text": "Deep self-learning enables fast, high-fidelity isotropic resolution restoration for volumetric fluorescence microscopy",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s29",
+        "field": "title",
+        "start": 0,
+        "end": 118
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s29"
+      ]
+    },
+    {
+      "id": "c30",
+      "text": "DiffuseIR: diffusion models for isotropic reconstruction of 3D microscopic images",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s30",
+        "field": "title",
+        "start": 0,
+        "end": 81
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s30"
+      ]
+    },
+    {
+      "id": "c31",
+      "text": "Deep learning enables reference-free isotropic super-resolution for volumetric fluorescence microscopy",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s31",
+        "field": "title",
+        "start": 0,
+        "end": 102
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s31"
+      ]
+    },
+    {
+      "id": "c32",
+      "text": "Resolution measures in molecular electron microscopy",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s32",
+        "field": "title",
+        "start": 0,
+        "end": 52
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s32"
+      ]
+    },
+    {
+      "id": "c33",
+      "text": "Rapid three-dimensional isotropic imaging of living cells using Bessel beam plane illumination",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s33",
+        "field": "title",
+        "start": 0,
+        "end": 94
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s33"
+      ]
+    },
+    {
+      "id": "c34",
+      "text": "Deep learning-based optical aberration estimation enables offline digital adaptive optics and super-resolution imaging",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s34",
+        "field": "title",
+        "start": 0,
+        "end": 118
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s34"
+      ]
+    },
+    {
+      "id": "c35",
+      "text": "Neural blind deconvolution using deep priors",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s35",
+        "field": "title",
+        "start": 0,
+        "end": 44
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s35"
+      ]
+    },
+    {
+      "id": "c36",
+      "text": "Bayesian-based iterative method of image restoration",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s36",
+        "field": "title",
+        "start": 0,
+        "end": 52
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s36"
+      ]
+    },
+    {
+      "id": "c37",
+      "text": "Implicit neural representations with periodic activation functions",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s37",
+        "field": "title",
+        "start": 0,
+        "end": 66
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s37"
+      ]
+    },
+    {
+      "id": "c38",
+      "text": "Accuracy of the Gaussian point spread function model in 2D localization microscopy",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s38",
+        "field": "title",
+        "start": 0,
+        "end": 82
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s38"
+      ]
+    },
+    {
+      "id": "c39",
+      "text": "Increasing axial resolution of 3D datasets using deconvolution algorithms",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s39",
+        "field": "title",
+        "start": 0,
+        "end": 73
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s39"
+      ]
+    },
+    {
+      "id": "c40",
+      "text": "A working person's guide to deconvolution in light microscopy",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s40",
+        "field": "title",
+        "start": 0,
+        "end": 61
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s40"
+      ]
+    },
+    {
+      "id": "c41",
+      "text": "Isotropic reconstruction of 3D fluorescence microscopy images using convolutional neural networks",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s41",
+        "field": "title",
+        "start": 0,
+        "end": 97
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s41"
+      ]
+    },
+    {
+      "id": "c42",
+      "text": "Content-aware image restoration: pushing the limits of fluorescence microscopy",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s42",
+        "field": "title",
+        "start": 0,
+        "end": 78
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s42"
+      ]
+    },
+    {
+      "id": "c43",
+      "text": "A latent space of stochastic diffusion models for zero-shot image editing and guidance",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s43",
+        "field": "title",
+        "start": 0,
+        "end": 86
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s43"
+      ]
+    },
+    {
+      "id": "c44",
+      "text": "Consistency flow matching: Defining straight flows with velocity consistency",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s44",
+        "field": "title",
+        "start": 0,
+        "end": 76
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s44"
+      ]
+    },
+    {
+      "id": "c45",
+      "text": "Unpaired image-to-image translation using cycle-consistent adversarial networks",
+      "anchor": {
+        "target": "source_declared",
+        "source_id": "s45",
+        "field": "title",
+        "start": 0,
+        "end": 79
+      },
+      "category": "identity",
+      "importance": "decision",
+      "source_ids": [
+        "s45"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "text": "全文是否免费下载",
+      "reason": "本次审查验证文献身份与稳定标识符；出版社是否提供免费全文需逐页区分。"
+    }
+  ],
+  "network_actions": [
+    {
+      "id": "a1_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fnmeth.1583",
+      "status": "success",
+      "observed_at": "2026-09-17T09:31:46.399287+00:00",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "id": "a2_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Foe.20.006527",
+      "status": "success",
+      "observed_at": "2026-09-17T09:31:46.367914+00:00",
+      "source_ids": [
+        "s2"
+      ]
+    },
+    {
+      "id": "a3_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.48550%2Farxiv.1709.01179",
+      "status": "success",
+      "observed_at": "2026-09-17T09:31:46.236583+00:00",
+      "source_ids": [
+        "s3"
+      ]
+    },
+    {
+      "id": "a4_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41592-021-01155-x",
+      "status": "success",
+      "observed_at": "2026-09-17T09:31:48.204656+00:00",
+      "source_ids": [
+        "s4"
+      ]
+    },
+    {
+      "id": "a5_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fnmeth.3632",
+      "status": "success",
+      "observed_at": "2026-09-17T09:31:48.459334+00:00",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "id": "a6_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1109%2Ficcvw60793.2023.00419",
+      "status": "success",
+      "observed_at": "2026-09-17T09:31:48.350571+00:00",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "id": "a7_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41467-020-20329-3",
+      "status": "success",
+      "observed_at": "2026-09-17T09:31:50.323839+00:00",
+      "source_ids": [
+        "s7"
+      ]
+    },
+    {
+      "id": "a8_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41587-020-0560-x",
+      "status": "success",
+      "observed_at": "2026-09-17T09:31:50.555543+00:00",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "id": "a9_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Fboe.505217",
+      "status": "success",
+      "observed_at": "2026-09-17T09:31:50.365357+00:00",
+      "source_ids": [
+        "s9"
+      ]
+    },
+    {
+      "id": "a10_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41467-025-56078-4",
+      "status": "success",
+      "observed_at": "2026-09-17T09:31:52.387084+00:00",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "id": "a11_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1063%2F1.1858060",
+      "status": "success",
+      "observed_at": "2026-09-17T09:31:52.200594+00:00",
+      "source_ids": [
+        "s11"
+      ]
+    },
+    {
+      "id": "a12_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fnphoton.2014.13",
+      "status": "success",
+      "observed_at": "2026-09-17T09:31:52.556486+00:00",
+      "source_ids": [
+        "s12"
+      ]
+    },
+    {
+      "id": "a13_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1109%2Fcvpr52734.2025.02733",
+      "status": "success",
+      "observed_at": "2026-09-17T09:31:54.747261+00:00",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "id": "a14_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.48550%2Farxiv.2509.24311",
+      "status": "success",
+      "observed_at": "2026-09-17T09:31:55.276264+00:00",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "id": "a15_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.48550%2Farxiv.2505.23444",
+      "status": "success",
+      "observed_at": "2026-09-17T09:31:55.800263+00:00",
+      "source_ids": [
+        "s15"
+      ]
+    },
+    {
+      "id": "a16_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Foe.26.030162",
+      "status": "success",
+      "observed_at": "2026-09-17T09:31:56.880329+00:00",
+      "source_ids": [
+        "s16"
+      ]
+    },
+    {
+      "id": "a17_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1109%2Ftpami.2020.2992934",
+      "status": "success",
+      "observed_at": "2026-09-17T09:31:57.162249+00:00",
+      "source_ids": [
+        "s17"
+      ]
+    },
+    {
+      "id": "a18_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fnmeth.2064",
+      "status": "success",
+      "observed_at": "2026-09-17T09:31:57.755572+00:00",
+      "source_ids": [
+        "s18"
+      ]
+    },
+    {
+      "id": "a19_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41377-021-00484-y",
+      "status": "success",
+      "observed_at": "2026-09-17T09:31:58.945336+00:00",
+      "source_ids": [
+        "s19"
+      ]
+    },
+    {
+      "id": "a20_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41592-022-01652-7",
+      "status": "success",
+      "observed_at": "2026-09-17T09:31:59.282886+00:00",
+      "source_ids": [
+        "s20"
+      ]
+    },
+    {
+      "id": "a21_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1109%2Fcvpr52734.2025.01500",
+      "status": "success",
+      "observed_at": "2026-09-17T09:31:59.588753+00:00",
+      "source_ids": [
+        "s21"
+      ]
+    },
+    {
+      "id": "a22_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.48550%2Farxiv.2210.02747",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:00.845731+00:00",
+      "source_ids": [
+        "s22"
+      ]
+    },
+    {
+      "id": "a23_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Foptica.530893",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:01.293184+00:00",
+      "source_ids": [
+        "s23"
+      ]
+    },
+    {
+      "id": "a24_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1086%2F111605",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:01.320465+00:00",
+      "source_ids": [
+        "s24"
+      ]
+    },
+    {
+      "id": "a25_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41592-024-02244-3",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:02.877047+00:00",
+      "source_ids": [
+        "s25"
+      ]
+    },
+    {
+      "id": "a26_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Fol.39.000275",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:03.525024+00:00",
+      "source_ids": [
+        "s26"
+      ]
+    },
+    {
+      "id": "a27_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fncomms9881",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:03.456905+00:00",
+      "source_ids": [
+        "s27"
+      ]
+    },
+    {
+      "id": "a28_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Foptcon.460029",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:04.971094+00:00",
+      "source_ids": [
+        "s28"
+      ]
+    },
+    {
+      "id": "a29_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41377-023-01230-2",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:05.538987+00:00",
+      "source_ids": [
+        "s29"
+      ]
+    },
+    {
+      "id": "a30_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-031-43999-5_31",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:05.439236+00:00",
+      "source_ids": [
+        "s30"
+      ]
+    },
+    {
+      "id": "a31_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41467-022-30949-6",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:07.040404+00:00",
+      "source_ids": [
+        "s31"
+      ]
+    },
+    {
+      "id": "a32_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1016%2Fs0076-6879%2810%2982003-8",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:07.196858+00:00",
+      "source_ids": [
+        "s32"
+      ]
+    },
+    {
+      "id": "a33_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fnmeth.1586",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:07.603081+00:00",
+      "source_ids": [
+        "s33"
+      ]
+    },
+    {
+      "id": "a34_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Fprj.506778",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:08.980685+00:00",
+      "source_ids": [
+        "s34"
+      ]
+    },
+    {
+      "id": "a35_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1109%2Fcvpr42600.2020.00340",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:09.314296+00:00",
+      "source_ids": [
+        "s35"
+      ]
+    },
+    {
+      "id": "a36_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Fjosa.62.000055",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:09.625187+00:00",
+      "source_ids": [
+        "s36"
+      ]
+    },
+    {
+      "id": "a37_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.48550%2Farxiv.2006.09661",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:11.002990+00:00",
+      "source_ids": [
+        "s37"
+      ]
+    },
+    {
+      "id": "a38_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1364%2Foe.18.024461",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:11.231325+00:00",
+      "source_ids": [
+        "s38"
+      ]
+    },
+    {
+      "id": "a39_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1111%2Fj.1365-2818.2011.03503.x",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:11.531628+00:00",
+      "source_ids": [
+        "s39"
+      ]
+    },
+    {
+      "id": "a40_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.2144%2F01315bi01",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:13.102481+00:00",
+      "source_ids": [
+        "s40"
+      ]
+    },
+    {
+      "id": "a41_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-319-66185-8_15",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:13.172363+00:00",
+      "source_ids": [
+        "s41"
+      ]
+    },
+    {
+      "id": "a42_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1038%2Fs41592-018-0216-7",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:13.825680+00:00",
+      "source_ids": [
+        "s42"
+      ]
+    },
+    {
+      "id": "a43_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1109%2Ficcv51070.2023.00678",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:14.986378+00:00",
+      "source_ids": [
+        "s43"
+      ]
+    },
+    {
+      "id": "a44_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.48550%2Farxiv.2407.02398",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:15.083120+00:00",
+      "source_ids": [
+        "s44"
+      ]
+    },
+    {
+      "id": "a45_1",
+      "kind": "read",
+      "target": "https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1109%2Ficcv.2017.244",
+      "status": "success",
+      "observed_at": "2026-09-17T09:32:15.935172+00:00",
+      "source_ids": [
+        "s45"
+      ]
+    }
+  ]
+}

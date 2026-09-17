@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "bundle_id": "53f23bd8d14918f4d29353df09beb7cf7e0f30c4dd6b036bc99ef24d75a5b9fe",
+  "reviewer": {
+    "kind": "saved_demo",
+    "model": null
+  },
+  "findings": [
+    {
+      "claim_id": "c1",
+      "verdict": "supported",
+      "issue_codes": [],
+      "evidence": [
+        {
+          "source_id": "s1",
+          "text_sha256": "b1ad85cc28666f9627a55815af5b9c26d322f39e2dc29d5dae5e55fbaa0e0d6b",
+          "start": 0,
+          "end": 32,
+          "quote": "Alpha supports local deployment."
+        }
+      ],
+      "action_ids": [],
+      "reason": "The supplied text explicitly states local deployment.",
+      "suggested_text": null,
+      "unresolved": []
+    }
+  ]
+}

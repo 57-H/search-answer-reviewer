@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "mode": "answer",
+  "evidence_mode": "provided",
+  "reference_time": "2026-09-16T00:00:00+00:00",
+  "question": "Does the supplied synthetic evidence establish this claim?",
+  "answer": "Alpha supports local deployment.",
+  "sources": [
+    {
+      "id": "s1",
+      "requested_url": "https://example.org/docs",
+      "resolved_url": "https://example.org/docs",
+      "kind": "page",
+      "provenance": "supplied",
+      "declared": {
+        "title": "Alpha docs",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "observed": {
+        "title": "Alpha docs",
+        "publisher": null,
+        "authors": [],
+        "identifier": null
+      },
+      "text": "Alpha supports local deployment.",
+      "access": "readable",
+      "coverage": "complete",
+      "retrieved_at": null,
+      "published_at": null,
+      "updated_at": null,
+      "observation_ref": null
+    }
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "text": "Alpha supports local deployment.",
+      "anchor": {
+        "target": "answer",
+        "source_id": null,
+        "field": null,
+        "start": 0,
+        "end": 32
+      },
+      "category": "scope",
+      "importance": "decision",
+      "source_ids": [
+        "s1"
+      ]
+    }
+  ],
+  "excluded": [],
+  "network_actions": []
+}
