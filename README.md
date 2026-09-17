@@ -29,7 +29,13 @@ python3 scripts/review.py replay --example examples/overclaim --out-dir work/dem
 
 ### 作为 agent skill 使用
 
-将整个项目目录放入宿主的 skills 目录，保留 `SKILL.md`、`scripts/` 和 `references/` 的相对位置。Skill 指导 agent 在搜索工具返回结果后审查准备使用的来源，并在回答前检查新加入的重要事实；用户无需每次单独提出审查要求。
+把仓库链接交给支持安装 skill 的 agent，并说明 **skill 位于仓库根目录**：
+
+```text
+请从 https://github.com/66677785658565/search-answer-reviewer 安装仓库根目录的 Search Answer Reviewer skill，保留整个目录结构，并运行 README 中的 replay 示例验证安装。
+```
+
+若安装器要求指定仓库内路径，请使用 `.`，并将 skill 命名为 `search-answer-reviewer`。安装时需保留 `SKILL.md`、`scripts/` 和 `references/` 的相对位置。Codex 的 `$skill-installer` 支持从其他 GitHub 仓库安装 skill；安装后若未显示，可重启 Codex。Skill 指导 agent 在搜索工具返回结果后审查准备使用的来源，并在回答前检查新加入的重要事实；用户无需每次单独提出审查要求。
 
 仅安装 skill 时，是否每次执行仍取决于宿主模型和工具调用路径。它不能拦截所有搜索工具，也不能机械保证每次触发。
 
