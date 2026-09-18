@@ -14,7 +14,8 @@ class SearchAuditGate:
 
     The backend returns a results-mode Request containing the real search action
     and one anchored source-declaration claim for every returned source. The
-    auditor receives Prepared and returns Judgments for that same bundle.
+    auditor receives Prepared and returns Judgments with per-source task fit
+    for that same bundle.
     """
 
     def __init__(self, backend: Callable[[str, str], dict[str, object]],
@@ -50,10 +51,12 @@ class SearchAuditGate:
 
         judgments = self._auditor(copy.deepcopy(prepared))
         record(judgments, {"reviewer", "findings"}, "auditor result")
+        require("task_fit" in judgments, "auditor result", "missing per-result task fit")
         record(judgments["reviewer"], {"kind", "model"}, "auditor result.reviewer")
         require(judgments["reviewer"]["kind"] in {"host_model", "human"},
                 "auditor result.reviewer", "live gate requires a fresh reviewer")
         report = build_report(prepared, judgments)
+        fit_by_source = {entry["source_id"]: entry for entry in report["task_fit"]}
         require(not request["sources"] or report["scope"]["semantic_review_status"] == "complete",
                 "auditor result", "incomplete claim review")
         findings = {finding["claim_id"]: finding for finding in report["findings"]}
@@ -69,7 +72,8 @@ class SearchAuditGate:
         for source in request["sources"]:
             related_findings = [finding for finding in report["findings"]
                                 if source["id"] in finding["claim"]["source_ids"]]
-            if related_findings and all(finding["verdict"] == "supported" for finding in related_findings):
+            if (fit_by_source[source["id"]]["verdict"] == "matches" and related_findings
+                    and all(finding["verdict"] == "supported" for finding in related_findings)):
                 passed += 1
         total = len(request["sources"])
         status_line = (f"搜索结果审查通过 {passed}/{total} 条" if total

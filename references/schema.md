@@ -70,6 +70,10 @@ prepare 输出 `{schema_version, bundle_id, request, mechanical_checks}`。
 
 reviewer.kind=host_model/human/saved_demo；model 未知可 null，不虚构模型名称。
 
+实时门控搜索还要求 `task_fit` 数组，每个返回来源各一条；历史示例和普通答案审查可省略。每条为 `{source_id, verdict, reason, matched_requirements, unmet_requirements}`，其中 verdict 取 `matches` / `partial` / `fails` / `unknown`。`matches` 须列出至少一个已满足需求，且未满足需求为空；其他结论须列出未满足或尚未核实的需求。`task_fit` 判断结果与用户任务的匹配程度，与来源身份或事实断言的 `findings` 分开。
+
+例如用户要求 Windows 且离线，来源只确认 Windows 时，填入 `{"source_id":"s1","verdict":"partial","reason":"页面没有说明离线运行","matched_requirements":["Windows"],"unmet_requirements":["离线运行"]}`。不能因为来源真实，就把这条结果标为 `matches`。
+
 每个 Finding：
 
 | 字段 | 约定 |
@@ -91,7 +95,7 @@ unverifiable 必须能在关联来源限制或失败 Action 中找到依据；�
 
 ## Report
 
-review.json 保留 original_answer、question、sources、network_actions、mechanical_checks、findings、scope 与 summary。
+review.json 保留 original_answer、question、sources、network_actions、mechanical_checks、findings、task_fit、scope 与 summary。
 scope.semantic_review_status=not_performed/partial/complete 表示执行覆盖，不表示答案无误。
 每个 Finding 包含原始 claim，供报告回查和评测锚点匹配。
 退出码 0 表示成功生成报告；2 表示输入/判断不合法；1 表示文件操作失败。

@@ -3,10 +3,11 @@ import unittest
 
 from fixtures import request
 from reviewer_core.gate import SearchAuditGate
+from reviewer_core.report import render_markdown
 
 
 def search_request(question="Can Alpha run locally?", query="Alpha local deployment"):
-    data = request(answer="Alpha docs", text="Alpha docs")
+    data = request(answer="Alpha docs", text="Alpha docs explain local deployment.")
     data.update(mode="results", answer=None, evidence_mode="host_web", question=question)
     source = data["sources"][0]
     source.update(provenance="host_observation", retrieved_at="2026-09-17T00:00:00+00:00",
@@ -23,6 +24,9 @@ def audit(prepared):
     source = prepared["request"]["sources"][0]
     return {"schema_version": 1, "bundle_id": prepared["bundle_id"],
             "reviewer": {"kind": "host_model", "model": "test-model"},
+            "task_fit": [{"source_id": source["id"], "verdict": "matches",
+                          "reason": "The source addresses local deployment, the user's question.",
+                          "matched_requirements": ["local deployment"], "unmet_requirements": []}],
             "findings": [{"claim_id": "c1", "verdict": "supported", "issue_codes": [],
                           "evidence": [{"source_id": "s1", "text_sha256": source["text_sha256"],
                                         "start": 0, "end": len(source["text"]), "quote": source["text"]}],
@@ -85,6 +89,10 @@ class GateTests(unittest.TestCase):
 
         def mixed(prepared):
             result = audit(prepared)
+            result["task_fit"].append({"source_id": "s2", "verdict": "partial",
+                                       "reason": "The source is about Alpha but does not address local deployment.",
+                                       "matched_requirements": ["Alpha"],
+                                       "unmet_requirements": ["local deployment"]})
             result["findings"].append({"claim_id": "c2", "verdict": "insufficient_evidence",
                                        "issue_codes": ["missing_evidence"], "evidence": [],
                                        "action_ids": [], "reason": "The captured text is inadequate.",
@@ -116,6 +124,48 @@ class GateTests(unittest.TestCase):
             "Can Alpha run locally?", "Alpha local deployment")
         self.assertEqual(result["review_progress"], {"passed": 0, "total": 1})
         self.assertEqual(result["status_line"], "搜索结果审查通过 0/1 条")
+
+    def test_supported_but_off_topic_result_does_not_pass(self):
+        def off_topic(prepared):
+            result = audit(prepared)
+            result["task_fit"][0].update(verdict="fails",
+                                          reason="This is a different product named Alpha.",
+                                          matched_requirements=[],
+                                          unmet_requirements=["requested Alpha product"])
+            return result
+
+        result = SearchAuditGate(search_request, off_topic).search(
+            "Can Alpha run locally?", "Alpha local deployment")
+        self.assertEqual(result["report"]["summary"]["supported"], 1)
+        self.assertEqual(result["review_progress"], {"passed": 0, "total": 1})
+        self.assertEqual(result["report"]["task_fit"][0]["verdict"], "fails")
+        self.assertIn("不匹配", render_markdown(result["report"]))
+
+    def test_supported_but_only_partly_matching_result_does_not_pass(self):
+        def partial(prepared):
+            result = audit(prepared)
+            result["task_fit"][0].update(verdict="partial",
+                                          reason="It names Alpha but does not establish local deployment.",
+                                          matched_requirements=["Alpha"],
+                                          unmet_requirements=["local deployment"])
+            return result
+
+        result = SearchAuditGate(search_request, partial).search(
+            "Can Alpha run locally?", "Alpha local deployment")
+        self.assertEqual(result["report"]["summary"]["supported"], 1)
+        self.assertEqual(result["review_progress"], {"passed": 0, "total": 1})
+        self.assertIn("部分匹配", render_markdown(result["report"]))
+
+    def test_missing_or_duplicate_task_fit_blocks_release(self):
+        for editor in [lambda result: result.pop("task_fit"),
+                       lambda result: result["task_fit"].append(copy.deepcopy(result["task_fit"][0]))]:
+            def invalid(prepared):
+                result = audit(prepared)
+                editor(result)
+                return result
+            with self.subTest(editor=editor), self.assertRaises(ValueError):
+                SearchAuditGate(search_request, invalid).search(
+                    "Can Alpha run locally?", "Alpha local deployment")
 
     def test_every_returned_source_needs_a_review_claim(self):
         data = search_request()
@@ -166,7 +216,8 @@ class GateTests(unittest.TestCase):
         def empty_audit(prepared):
             calls.append(prepared["bundle_id"])
             return {"schema_version": 1, "bundle_id": prepared["bundle_id"],
-                    "reviewer": {"kind": "host_model", "model": "test-model"}, "findings": []}
+                    "reviewer": {"kind": "host_model", "model": "test-model"},
+                    "task_fit": [], "findings": []}
 
         result = SearchAuditGate(lambda question, query: data, empty_audit).search(
             "Can Alpha run locally?", "Alpha local deployment")

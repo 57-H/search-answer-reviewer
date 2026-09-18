@@ -5,17 +5,19 @@ from collections import Counter
 import copy
 import html
 import re
-from .checks import unreviewed, validate_judgments, verify_prepared
+from .checks import unreviewed, validate_judgments, validate_task_fit, verify_prepared
 from .contracts import VERDICTS
 
 LABELS = {"supported": "有证据支持", "contradicted": "存在矛盾", "insufficient_evidence": "证据不足",
           "unverifiable": "无法核实", "conflicted": "证据冲突", "out_of_scope": "范围外", "not_reviewed": "未审查"}
+FIT_LABELS = {"matches": "匹配", "partial": "部分匹配", "fails": "不匹配", "unknown": "无法判断"}
 
 
 def build_report(prepared: dict[str, object], judgments: dict[str, object] | None) -> dict[str, object]:
     verify_prepared(prepared)
     request = prepared["request"]
     findings = validate_judgments(prepared, judgments) if judgments is not None else [unreviewed(c["id"]) for c in request["claims"]]
+    task_fit = validate_task_fit(prepared, judgments) if judgments is not None else []
     counts = Counter(f["verdict"] for f in findings)
     reviewed = len(findings) - counts["not_reviewed"]
     status = "not_performed" if not reviewed else ("partial" if counts["not_reviewed"] else "complete")
@@ -34,6 +36,7 @@ def build_report(prepared: dict[str, object], judgments: dict[str, object] | Non
             "question": request["question"], "original_answer": request["answer"],
             "sources": copy.deepcopy(request["sources"]), "network_actions": copy.deepcopy(request["network_actions"]),
             "mechanical_checks": copy.deepcopy(prepared["mechanical_checks"]), "findings": findings,
+            "task_fit": task_fit,
             "summary": {"extracted_claims": len(findings), "reviewed": reviewed,
                         **{v: counts[v] for v in sorted(VERDICTS)}}}
 
@@ -58,6 +61,13 @@ def render_markdown(report: dict[str, object]) -> str:
              "| 原断言 | 结论 | 问题类型 |", "|---|---|---|"]
     for f in report["findings"]:
         lines.append(f"| {escape(f['claim']['text'])} | {LABELS[f['verdict']]} | {escape(', '.join(f['issue_codes']) or '—')} |")
+    if report["task_fit"]:
+        lines += ["", "## 搜索结果与需求的匹配", "", "| 来源 | 匹配程度 | 已满足的需求 | 未满足或未核实的需求 | 原因 |",
+                  "|---|---|---|---|---|"]
+        for fit in report["task_fit"]:
+            lines.append(f"| {escape(fit['source_id'])} | {FIT_LABELS[fit['verdict']]} | "
+                         f"{escape(', '.join(fit['matched_requirements']) or '—')} | "
+                         f"{escape(', '.join(fit['unmet_requirements']) or '—')} | {escape(fit['reason'])} |")
     for f in report["findings"]:
         lines += ["", f"## {escape(f['claim_id'])} · {LABELS[f['verdict']]}", "", escape(f["reason"])]
         for e in f["evidence"]:

@@ -12,9 +12,9 @@ audited = gate.search(user_question, search_query)
 
 运行时把本项目 `scripts/` 加入 Python 模块路径。`search_backend(question, query)` 必须执行一次真实搜索，返回符合 [schema.md](schema.md) 的 `mode="results"`、`evidence_mode="host_web"` Request。保留原问题；记录本次成功的 search Action，`target` 等于本次 query，并把每个返回来源 ID 放进该 Action 的 `source_ids`。每条 Source 要有真实的 `host_observation`、`observation_ref`、`retrieved_at`，并至少有一条锚定自身声明字段（如标题或标识符）的 Claim。搜索后端可以按需要读取页面，但必须记录读取动作与真实可得的正文；不能把搜索摘要伪装成页面证据。
 
-`host_auditor(prepared)` 在收到冻结后的 Prepared 时执行本 skill 的语义审查，并返回同一 `bundle_id` 的 Judgments。审查者须为 `host_model` 或 `human`；保存演示不能冒充现场审查。每个返回来源至少需要一个实质性结论（包括有具体原因的 `unverifiable` 或 `insufficient_evidence`）。来源缺失、审查遗漏、旧 bundle、伪造引文或回调异常都会阻止交付。空搜索结果仍调用审查器，返回 `status="no_results"`。
+`host_auditor(prepared)` 在收到冻结后的 Prepared 时执行本 skill 的语义审查，并返回同一 `bundle_id` 的 Judgments。审查者须为 `host_model` 或 `human`；保存演示不能冒充现场审查。每个返回来源须有一条 `task_fit` 需求匹配判断，以及至少一个实质性事实结论（包括有具体原因的 `unverifiable` 或 `insufficient_evidence`）。来源缺失、需求匹配判断缺失或重复、事实审查遗漏、旧 bundle、伪造引文或回调异常都会阻止交付。空搜索结果仍调用审查器，返回 `status="no_results"`。
 
-门控返回 `{"status", "sources", "report", "review_progress", "status_line"}`。`review_progress` 是 `{"passed": x, "total": y}`；`total` 为本次返回的来源数，某来源关联的所有断言均为 `supported` 才计入 `passed`。`status_line` 使用程序计算的文字，例如 `搜索结果审查通过 2/3 条`；无结果时为 `搜索结果审查：无结果（0/0）`。宿主应只把这个门控结果交给 agent。若要求每次都对用户可见，宿主还应在工具返回后直接显示 `status_line`，避免依赖模型自发转述；多次搜索逐次显示，不把一次查询的数字误当全程总数。
+门控返回 `{"status", "sources", "report", "review_progress", "status_line"}`。`review_progress` 是 `{"passed": x, "total": y}`；`total` 为本次返回的来源数，只有 `task_fit=matches` 且关联断言全部为 `supported` 的结果才计入 `passed`。`status_line` 使用程序计算的文字，例如 `搜索结果审查通过 2/3 条`；无结果时为 `搜索结果审查：无结果（0/0）`。不匹配的来源仍保留在报告中，可用于解释排除理由，但不可当作满足需求的推荐。宿主应只把这个门控结果交给 agent。若要求每次都对用户可见，宿主还应在工具返回后直接显示 `status_line`，避免依赖模型自发转述；多次搜索逐次显示，不把一次查询的数字误当全程总数。
 
 多次相同查询也逐次审查，不依赖缓存跳过审核；如果宿主在门控外做缓存或另外暴露浏览器、搜索 API、内置 WebSearch，这些路径不受保证。
 

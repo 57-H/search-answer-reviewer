@@ -68,6 +68,36 @@ def unreviewed(claim_id: str) -> dict[str, object]:
             "unresolved": ["Semantic review has not been performed."]}
 
 
+def validate_task_fit(prepared: dict[str, object], judgments: dict[str, object]) -> list[dict[str, object]]:
+    """Check per-result task fit when the host supplies it; live gates require it."""
+    if "task_fit" not in judgments:
+        return []
+    entries = judgments["task_fit"]
+    require(isinstance(entries, list), "task_fit", "expected array")
+    source_ids = {source["id"] for source in prepared["request"]["sources"]}
+    seen = set()
+    for i, entry in enumerate(entries):
+        path = f"task_fit[{i}]"
+        record(entry, {"source_id", "verdict", "reason", "matched_requirements", "unmet_requirements"}, path)
+        text(entry["source_id"], path + ".source_id")
+        require(entry["source_id"] in source_ids and entry["source_id"] not in seen,
+                path + ".source_id", "unknown or duplicate source")
+        seen.add(entry["source_id"])
+        require(entry["verdict"] in {"matches", "partial", "fails", "unknown"},
+                path + ".verdict", "unknown task-fit verdict")
+        text(entry["reason"], path + ".reason")
+        strings(entry["matched_requirements"], path + ".matched_requirements")
+        strings(entry["unmet_requirements"], path + ".unmet_requirements")
+        if entry["verdict"] == "matches":
+            require(bool(entry["matched_requirements"]) and not entry["unmet_requirements"],
+                    path, "matches needs a matched requirement and no unmet requirements")
+        else:
+            require(bool(entry["unmet_requirements"]), path,
+                    "partial, fails and unknown must identify the unmet or unverified need")
+    require(seen == source_ids, "task_fit", "missing result: " + ", ".join(sorted(source_ids - seen)))
+    return copy.deepcopy(entries)
+
+
 def validate_judgments(prepared: dict[str, object], judgments: dict[str, object]) -> list[dict[str, object]]:
     verify_prepared(prepared)
     record(judgments, {"schema_version", "bundle_id", "reviewer", "findings"}, "judgments")
