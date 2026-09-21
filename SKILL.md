@@ -42,7 +42,7 @@ For ordinary search tools, keep one review record per returned batch and derive 
    python scripts/review.py finalize --prepared work/prepared.json --judgments work/judgments.json --out-dir work/report
    ```
 
-   If validation rejects a reference, inspect the error and make at most one repair pass; disclose incomplete review if it still fails. Before delivery, compare the final draft with the original request and reviewed claims. For each new decision-relevant fact, add and review a claim, or remove/narrow the fact; regenerate the report if the request changes. Update the batch record so every result has an explicit `used_in_answer` value, each used fact has a verdict, and each conclusive verdict points to captured evidence through `evidence_refs`. Then derive the ordinary-mode status from the record:
+   If validation rejects a reference, inspect the error and make at most one repair pass; disclose incomplete review if it still fails. Before delivery, compare the final draft with the original request and reviewed claims. For each new decision-relevant fact, add and review a claim, or remove/narrow the fact; regenerate the report if the request changes. Update the batch record so every result has an explicit `used_in_answer` value, each used fact has a verdict, and each conclusive verdict points to captured evidence through `evidence_refs`. `evidence_refs` is an array of non-empty strings such as `review.json finding c1; source s1; observation turn0view0`; do not copy evidence objects into it. Then derive the ordinary-mode status from the record:
 
    ```bash
    python scripts/review.py ordinary-status --input work/batch-review.json
