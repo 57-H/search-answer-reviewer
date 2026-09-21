@@ -11,6 +11,16 @@ Use the host's available search/read tools and model reasoning. The bundled Pyth
 
 For ordinary search tools, keep one review record per returned batch and derive the user-visible coverage line from that record. For a host that exposes the experimental `SearchAuditGate`, use its gated search entry instead of the raw search backend. In hosts that expose an ungated search tool, this skill is guidance and cannot mechanically guarantee invocation after each tool result. Read [host-integration.md](references/host-integration.md) only when wiring a controlled search application.
 
+## Mandatory gate for every ordinary search batch
+
+Before using any returned result in reasoning or an answer, create `work/batch-review.json` using the ordinary batch format in [schema.md](references/schema.md), then run:
+
+```bash
+python /absolute/path/to/search-answer-reviewer/scripts/review.py ordinary-status --input work/batch-review.json
+```
+
+Replace the example prefix with the directory that contains this `SKILL.md`, while keeping `work/batch-review.json` in the task workspace. Continue with the result only after this command succeeds. Copy its exact `status_line` into the final answer. When the record cannot be completed or the command fails, leave that batch unused and state `搜索结果审查未完成`; a handwritten `已审查 x/y` is not a review status. This gate is complete only when the successful command invocation is present in the execution trace.
+
 ## Start with the right scope
 
 - With search results, assign a stable batch ID and result ID to every returned item. Record `task_fit` and `source_identity` for **every** result, including irrelevant, partial, unavailable, and excluded results. Use the results already returned by the tool.
@@ -42,17 +52,9 @@ For ordinary search tools, keep one review record per returned batch and derive 
    python scripts/review.py finalize --prepared work/prepared.json --judgments work/judgments.json --out-dir work/report
    ```
 
-   If validation rejects a reference, inspect the error and make at most one repair pass; disclose incomplete review if it still fails. Before delivery, compare the final draft with the original request and reviewed claims. For each new decision-relevant fact, add and review a claim, or remove/narrow the fact; regenerate the report if the request changes. Update the batch record so every result has an explicit `used_in_answer` value, each used fact has a verdict, and each conclusive verdict points to captured evidence through `evidence_refs`. `evidence_refs` is an array of non-empty strings such as `review.json finding c1; source s1; observation turn0view0`; do not copy evidence objects into it. Then derive the ordinary-mode status from the record:
-
-   ```bash
-   python scripts/review.py ordinary-status --input work/batch-review.json
-   ```
-
-   Complete when the report validates, the answer meets the user's request without promoting gaps into facts, the batch status has been computed from the saved record, and any unresolved or unreviewed decision-relevant claims are disclosed.
+   If validation rejects a reference, inspect the error and make at most one repair pass; disclose incomplete review if it still fails. Before delivery, compare the final draft with the original request and reviewed claims. For each new decision-relevant fact, add and review a claim, or remove/narrow the fact; regenerate the report if the request changes. Update the batch record so every result has an explicit `used_in_answer` value, each used fact has a verdict, and each conclusive verdict points to captured evidence through `evidence_refs`. `evidence_refs` is an array of non-empty strings such as `review.json finding c1; source s1; observation turn0view0`; do not copy evidence objects into it. Complete when the report validates, the answer meets the user's request without promoting gaps into facts, the mandatory batch gate has succeeded, and any unresolved or unreviewed decision-relevant claims are disclosed.
 
 ## Output
-
-For every ordinary search batch, include the exact `status_line` produced from its saved record, for example `已审查 2/3`. Do not estimate the numerator or denominator. A zero-result batch uses `已审查 0/0（无搜索结果）`. If a batch is only partially reviewed, show the partial count and do not imply completion.
 
 When an experimental gated search returns `status_line`, include that exact line instead (for example, `搜索结果审查通过 2/3 条`). Do not combine gated pass counts with ordinary review counts. If the host renders the line directly, avoid repeating it.
 
