@@ -59,6 +59,11 @@ def score_runs(gold: list[dict[str, object]], runs: list[dict[str, object]], *, 
             record(c, {"anchor", "expected_verdict", "issue_codes", "rationale", "evidence"}, "gold claim")
             require(c["expected_verdict"] in VERDICTS, "gold verdict", "unknown verdict")
             require(set(c["issue_codes"]) <= ISSUES, "gold issue", "unknown issue")
+            if status == "human_validated":
+                require(type(c.get("serious")) is bool, "gold claim.serious",
+                        "human-validated claims must classify serious false-acceptance risk")
+            elif "serious" in c:
+                require(type(c["serious"]) is bool, "gold claim.serious", "boolean required")
             overlap(c["anchor"], c["anchor"])
         labels[item["case_id"]] = item["key_claims"]
     methods = defaultdict(list)
@@ -105,6 +110,9 @@ def score_runs(gold: list[dict[str, object]], runs: list[dict[str, object]], *, 
                 if c["expected_verdict"] == "unverifiable":
                     counts["unverifiable_claims"] += 1
                     counts["unverifiable_as_contradicted"] += v == "contradicted"
+                if c.get("serious", False):
+                    counts["serious_claims"] += 1
+                    counts["serious_false_acceptances"] += v == "supported" and c["expected_verdict"] != "supported"
             expected_issues = [{"anchor": c["anchor"], "issue": issue, "verdict": c["expected_verdict"]}
                                for c in expected for issue in set(c["issue_codes"])]
             predicted_issues = [{"anchor": c["anchor"], "issue": issue, "verdict": c["verdict"]}
@@ -114,7 +122,7 @@ def score_runs(gold: list[dict[str, object]], runs: list[dict[str, object]], *, 
             counts.update(true_positives=tp, false_positives=fp, false_negatives=fn)
             per_run.append({"case_id": run["case_id"], "run_id": run["run_id"], "status": run["status"], "tp": tp, "fp": fp, "fn": fn})
         tp, fp, fn = counts["true_positives"], counts["false_positives"], counts["false_negatives"]
-        result = {k: counts[k] for k in ["true_positives", "false_positives", "false_negatives", "failed_runs", "key_claims", "extracted_key_claims", "normal_claims", "normal_claim_false_alarms", "unverifiable_claims", "unverifiable_as_contradicted"]}
+        result = {k: counts[k] for k in ["true_positives", "false_positives", "false_negatives", "failed_runs", "key_claims", "extracted_key_claims", "normal_claims", "normal_claim_false_alarms", "unverifiable_claims", "unverifiable_as_contradicted", "serious_claims", "serious_false_acceptances"]}
         result.update(runs=len(records), precision=ratio(tp, tp + fp), recall=ratio(tp, tp + fn),
                       f1=ratio(2 * tp, 2 * tp + fp + fn), claim_extraction_coverage=ratio(counts["extracted_key_claims"], counts["key_claims"]),
                       normal_claim_false_alarm_rate=ratio(counts["normal_claim_false_alarms"], counts["normal_claims"]),
@@ -133,6 +141,7 @@ def score_runs(gold: list[dict[str, object]], runs: list[dict[str, object]], *, 
         output[method] = result
     return {"schema_version": 1,
             "annotation_status": "provisional_draft" if "draft_model_authored_not_human_validated" in annotation_statuses else "human_validated",
+            "serious_false_acceptances": output.get("full_skill", {}).get("serious_false_acceptances"),
             "methods": output,
             "limitations": ["Scores depend on annotation quality; proposed edits require separate human review.",
                             "Issue TP requires matching anchor, issue code and verdict; failed runs stay in recall denominators.",

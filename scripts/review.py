@@ -10,6 +10,7 @@ import sys
 from reviewer_core.checks import prepare, verify_prepared
 from reviewer_core.contracts import load_json, require, save_json, save_text
 from reviewer_core.evidence import locate_quote
+from reviewer_core.ordinary import summarize_batch_review
 from reviewer_core.report import build_report, render_markdown
 
 
@@ -46,6 +47,8 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--prepared", required=True)
     p.add_argument("--source", required=True)
     p.add_argument("--quote", required=True)
+    p = subs.add_parser("ordinary-status", help="Validate an ordinary-mode batch review and derive 已审查 x/y")
+    p.add_argument("--input", required=True)
     args = parser.parse_args(argv)
     try:
         if args.command == "prepare":
@@ -70,6 +73,8 @@ def main(argv: list[str] | None = None) -> int:
             require(s is not None, "source", "unknown source")
             refs = [{"source_id": s["id"], "text_sha256": s["text_sha256"], **m} for m in locate_quote(s["text"], args.quote)]
             print(json.dumps({"matches": refs, "coverage": s["coverage"], "access": s["access"]}, ensure_ascii=False, indent=2))
+        elif args.command == "ordinary-status":
+            print(json.dumps(summarize_batch_review(load_json(args.input)), ensure_ascii=False, indent=2))
         return 0
     except (ValueError, TypeError, KeyError, UnicodeError) as exc:
         print(f"Invalid review input: {exc}", file=sys.stderr)

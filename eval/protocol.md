@@ -18,7 +18,7 @@ Use one completed or failed run for every scheduled case and method. A first com
 
 ## Files and scoring
 
-Each case row contains `case_id`, `input`, `topic_group`, `source_group` and `data_origin`. `input` follows `references/schema.md`; its `claims` may be empty because claim extraction is part of the evaluation. Each gold row contains `case_id`, `annotation_status` and `key_claims`. A key claim has an exact `anchor`, `expected_verdict`, `issue_codes`, `evidence` and `rationale`.
+Each case row contains `case_id`, `input`, `topic_group`, `source_group` and `data_origin`. `input` follows `references/schema.md`; its `claims` may be empty because claim extraction is part of the evaluation. Each gold row contains `case_id`, `annotation_status` and `key_claims`. A human-validated key claim has an exact `anchor`, `expected_verdict`, `issue_codes`, `evidence`, `rationale` and boolean `serious`. Set `serious: true` only when accepting the claim as supported would change the answer or recommendation despite a clear hard-condition violation or missing critical evidence.
 
 Each run row contains `case_id`, `method`, `run_id`, `status` (`completed`, `invalid_output`, or `runtime_error`), `report`, `usage` and `elapsed_seconds`. For a completed run, `report.findings` follows the reviewer report schema. `usage` may be `null`; otherwise record available `input_tokens`, `output_tokens`, `cached_tokens`, `model_requests` and `network_actions` as nonnegative integers, with unavailable values as `null`. Failed runs stay in the recall denominator. Store every scheduled run, including failures, and inspect `missing_case_ids` in scorer output.
 
@@ -33,3 +33,36 @@ Until then, a pipeline smoke check can use `--allow-draft`. Its output is marked
 Issue true positives require a one-to-one match on target/source/field, at least 0.5 span overlap relative to the longer span, and the same issue code **and** verdict. Duplicate findings cannot increase true positives. Precision has no value with zero predicted issues; recall has no value with zero expected issues. The scorer also reports claim-extraction coverage, verdict confusion, normal-claim false alarms, unavailable-as-contradicted errors, failures, missing cases, time and usage completeness. Review proposed replacement text separately for new unsupported facts; the scorer does not certify its semantics.
 
 Unit tests validate these counting rules and CLI constraints. Offline `replay` examples validate report generation from saved synthetic judgments. Neither constitutes an independent model comparison.
+
+## Ordinary Skill coverage evaluation
+
+The primary Beta metric comes from complete Codex execution traces, not from skill-loading logs. Start from a clean repository-link installation with no development symlink and a new conversation. Use the balanced task list in `cases-codex-beta.jsonl`; run enough scheduled tasks and repetitions to observe at least 100 real search-result batches. Retain completed, failed, timed-out, invalid, and untriggered runs.
+
+For every run, record the metadata and ordered events defined in `references/schema.md`. A batch is covered only when every result used by the answer has a valid ordinary batch review before its first `result_used` event. Score saved traces with:
+
+```bash
+python3 eval/coverage.py \
+  --manifest work/eval/run-manifest.jsonl \
+  --runs work/eval/codex-runs.jsonl \
+  --out work/eval/coverage.json
+```
+
+Create and freeze `work/eval/run-manifest.jsonl` before running; `run-manifest.example.jsonl` shows one repetition. Expand it to the intended repetitions rather than editing the schedule after seeing results. The report exposes scheduled runs that never produced a trace in `missing_run_ids`.
+
+The report keeps skill activation rate as a diagnostic and reports failures as `skill_not_activated`, `review_skipped`, or `incomplete_review_record`. Non-search controls are excluded from the activation-rate denominator and reported through `negative_control_false_activation_rate`. Semantic misjudgment is deliberately not inferred from event order; assess it with frozen human labels and `score.py`.
+
+The coverage denominator is batches whose results influenced an answer or decision. `observed_batches` includes every returned batch and is used for the 100-batch minimum. Zero-result batches are retained and reported separately but cannot be “used” as evidence.
+
+## Beta release assessment
+
+After the real trace run and human semantic review, store the three local verification booleans shown in `checks-template.json`, then combine the evidence:
+
+```bash
+python3 eval/release.py \
+  --coverage work/eval/coverage.json \
+  --semantics work/eval/semantic-metrics.json \
+  --checks work/eval/checks.json \
+  --out work/eval/release.json
+```
+
+`ready: true` requires at least 100 observed batches, at most 5 missed-review batches, human-validated semantic labels, zero serious false acceptances for `full_skill`, a reproducible clean installation, passing deterministic tests, and passing documentation checks. Do not publish Beta reliability claims while any gate is false. Preserve the raw JSONL traces, frozen labels, prompts, skill revision, Codex version, model/settings, failures, elapsed time and available usage alongside the report.

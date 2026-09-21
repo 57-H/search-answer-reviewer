@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "batch_id": "search-1",
+  "result_ids": ["result-1", "result-2"],
+  "reviews": [
+    {
+      "result_id": "result-1",
+      "task_fit": {
+        "verdict": "matches",
+        "reason": "The page addresses the requested product and offline requirement."
+      },
+      "source_identity": {
+        "verdict": "verified",
+        "reason": "The observed publisher and page title match the declared source."
+      },
+      "used_claim_ids": ["claim-1"],
+      "fact_reviews": [
+        {
+          "claim_id": "claim-1",
+          "verdict": "supported",
+          "unresolved": []
+        }
+      ]
+    },
+    {
+      "result_id": "result-2",
+      "task_fit": {
+        "verdict": "fails",
+        "reason": "The result describes a cloud-only product and is excluded from the recommendation."
+      },
+      "source_identity": {
+        "verdict": "verified",
+        "reason": "The observed page belongs to the declared vendor."
+      },
+      "used_claim_ids": [],
+      "fact_reviews": []
+    }
+  ]
+}

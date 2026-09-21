@@ -7,10 +7,10 @@ def anchor(start=0, end=10):
     return {"target": "answer", "source_id": None, "field": None, "start": start, "end": end}
 
 
-def gold(verdict="contradicted", issues=None):
+def gold(verdict="contradicted", issues=None, serious=False):
     return [{"case_id": "x", "annotation_status": "human_validated", "key_claims": [{"anchor": anchor(), "expected_verdict": verdict,
              "issue_codes": ["numeric_mismatch"] if issues is None else issues,
-             "evidence": [], "rationale": "Synthetic scoring test"}]}]
+             "evidence": [], "rationale": "Synthetic scoring test", "serious": serious}]}]
 
 
 def run(status="completed", findings=None, case_id="x"):
@@ -92,6 +92,18 @@ class ScoreTests(unittest.TestCase):
         m = score_runs(g, [r1, r2])["methods"]["full_skill"]
         self.assertEqual(m["false_negatives"], 2)
         self.assertEqual(m["missing_case_ids"], ["y"])
+
+    def test_serious_false_acceptance_requires_human_label_and_supported_prediction(self):
+        accepted = run(findings=[finding(verdict="supported", issues=[])])
+        scored = score_runs(gold("insufficient_evidence", ["missing_evidence"], serious=True), [accepted])
+        self.assertEqual(scored["methods"]["full_skill"]["serious_false_acceptances"], 1)
+        self.assertEqual(scored["serious_false_acceptances"], 1)
+
+    def test_human_validated_claims_must_classify_seriousness(self):
+        labels = gold()
+        del labels[0]["key_claims"][0]["serious"]
+        with self.assertRaisesRegex(ValueError, "serious"):
+            score_runs(labels, [run()])
 
 
 if __name__ == "__main__":

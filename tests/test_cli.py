@@ -17,7 +17,7 @@ class CLITests(unittest.TestCase):
     def test_cli_only_exposes_review_commands(self):
         help_result = self.invoke("--help")
         self.assertEqual(help_result.returncode, 0, help_result.stderr)
-        self.assertIn("{prepare,finalize,replay,locate}", help_result.stdout)
+        self.assertIn("ordinary-status", help_result.stdout)
 
     def test_prepare_finalize_and_refuse_stale_without_overwrite(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -69,6 +69,27 @@ class CLITests(unittest.TestCase):
             done = self.invoke("locate", "--prepared", path, "--source", "s1", "--quote", "local deployment")
             self.assertEqual(done.returncode, 0, done.stderr)
             self.assertIn('"start": 15', done.stdout)
+
+    def test_ordinary_status_is_derived_from_saved_record(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "batch-review.json"
+            save_json(str(path), {
+                "schema_version": 1,
+                "batch_id": "batch-1",
+                "result_ids": ["r1", "r2"],
+                "reviews": [{
+                    "result_id": "r1",
+                    "task_fit": {"verdict": "partial", "reason": "One hard condition remains open."},
+                    "source_identity": {"verdict": "verified", "reason": "Title and publisher checked."},
+                    "used_claim_ids": [],
+                    "fact_reviews": [],
+                }],
+            })
+            done = self.invoke("ordinary-status", "--input", path)
+            self.assertEqual(done.returncode, 0, done.stderr)
+            output = __import__("json").loads(done.stdout)
+            self.assertEqual(output["status_line"], "已审查 1/2")
+            self.assertEqual(output["unreviewed_result_ids"], ["r2"])
 
 
 if __name__ == "__main__":

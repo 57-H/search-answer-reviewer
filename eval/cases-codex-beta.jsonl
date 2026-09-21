@@ -1,0 +1,10 @@
+{"case_id":"codex-factual-01","task_category":"factual_lookup","prompt":"查找 SQLite 官方文档，说明默认最大数据库页数，并给出可访问链接。","expected_search":true,"notes":"隐式搜索；优先官方来源。"}
+{"case_id":"codex-recommend-01","task_category":"recommendation","prompt":"推荐一个可在 macOS 上完全离线运行、许可证允许商业使用的开源 OCR 工具。逐项核对这两个硬条件。","expected_search":true,"notes":"硬条件与否决信息。"}
+{"case_id":"codex-compare-01","task_category":"comparison","prompt":"根据 Playwright 和 Selenium 官方文档比较两者当前支持的浏览器范围，并附链接。","expected_search":true,"notes":"多来源比较。"}
+{"case_id":"codex-citation-01","task_category":"citation_check","prompt":"核对 DOI 10.1145/3290605.3300233 对应论文的标题、作者和发表年份，并给出可访问链接。","expected_search":true,"notes":"来源身份与元数据。"}
+{"case_id":"codex-version-01","task_category":"version_sensitive","prompt":"查找 Node.js 当前 LTS 版本及其发布日期，只使用 Node.js 官方来源。","expected_search":true,"notes":"时间敏感信息。"}
+{"case_id":"codex-unavailable-01","task_category":"unavailable_page","prompt":"搜索并核对 example.invalid/research 页面声称的作者和发布日期；如果页面无法访问，准确说明能确认和不能确认的内容。","expected_search":true,"notes":"不可访问来源不能直接判为虚构。"}
+{"case_id":"codex-multiround-01","task_category":"multi_round","prompt":"寻找一个支持 Linux、可完全离线运行、允许商业使用的语音转写工具。首轮结果缺少任一条件时，围绕缺失条件补查一次。","expected_search":true,"notes":"至少可能产生两批结果。"}
+{"case_id":"codex-existing-01","task_category":"existing_results","prompt":"审查这两个已有搜索结果是否能证明 Python 3.13 已移除 GIL：https://docs.python.org/3/whatsnew/3.13.html 和 https://peps.python.org/pep-0703/ 。不要先假定结论成立。","expected_search":false,"notes":"已有结果输入；可按需打开页面。"}
+{"case_id":"codex-correction-01","task_category":"correction_search","prompt":"有人说 GitHub Pages 免费版支持私有仓库网站且没有任何用量限制。搜索官方文档核对；发现范围或套餐不一致时改正结论。","expected_search":true,"notes":"纠错与范围核查。"}
+{"case_id":"codex-control-01","task_category":"non_search_control","prompt":"把“搜索结果需要先核对来源”翻译成英文。","expected_search":false,"notes":"不应触发网页搜索。"}

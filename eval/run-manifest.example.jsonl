@@ -1,0 +1,10 @@
+{"run_id":"codex-factual-01-r1","case_id":"codex-factual-01","method":"full_skill","task_category":"factual_lookup"}
+{"run_id":"codex-recommend-01-r1","case_id":"codex-recommend-01","method":"full_skill","task_category":"recommendation"}
+{"run_id":"codex-compare-01-r1","case_id":"codex-compare-01","method":"full_skill","task_category":"comparison"}
+{"run_id":"codex-citation-01-r1","case_id":"codex-citation-01","method":"full_skill","task_category":"citation_check"}
+{"run_id":"codex-version-01-r1","case_id":"codex-version-01","method":"full_skill","task_category":"version_sensitive"}
+{"run_id":"codex-unavailable-01-r1","case_id":"codex-unavailable-01","method":"full_skill","task_category":"unavailable_page"}
+{"run_id":"codex-multiround-01-r1","case_id":"codex-multiround-01","method":"full_skill","task_category":"multi_round"}
+{"run_id":"codex-existing-01-r1","case_id":"codex-existing-01","method":"full_skill","task_category":"existing_results"}
+{"run_id":"codex-correction-01-r1","case_id":"codex-correction-01","method":"full_skill","task_category":"correction_search"}
+{"run_id":"codex-control-01-r1","case_id":"codex-control-01","method":"full_skill","task_category":"non_search_control"}

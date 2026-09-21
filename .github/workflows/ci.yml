@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run deterministic tests
+        run: python -m unittest discover -s tests -v
+      - name: Run evaluation tests
+        run: python -m unittest discover -s eval -p 'test_*.py' -v
+      - name: Check documentation links
+        run: python scripts/check_docs.py --root .
+      - name: Check clean installation
+        run: python scripts/check_install.py --root .
+      - name: Check generated-file hygiene
+        run: git diff --exit-code

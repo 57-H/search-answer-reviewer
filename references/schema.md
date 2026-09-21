@@ -70,7 +70,7 @@ prepare 输出 `{schema_version, bundle_id, request, mechanical_checks}`。
 
 reviewer.kind=host_model/human/saved_demo；model 未知可 null，不虚构模型名称。
 
-实时门控搜索还要求 `task_fit` 数组，每个返回来源各一条；历史示例和普通答案审查可省略。每条为 `{source_id, verdict, reason, matched_requirements, unmet_requirements}`，其中 verdict 取 `matches` / `partial` / `fails` / `unknown`。`matches` 须列出至少一个已满足需求，且未满足需求为空；其他结论须列出未满足或尚未核实的需求。`task_fit` 判断结果与用户任务的匹配程度，与来源身份或事实断言的 `findings` 分开。
+results 模式的详细审查要求 `task_fit` 数组，每个返回来源各一条；只审查已有答案且没有搜索结果批次时可省略。每条为 `{source_id, verdict, reason, matched_requirements, unmet_requirements}`，其中 verdict 取 `matches` / `partial` / `fails` / `unknown`。`matches` 须列出至少一个已满足需求，且未满足需求为空；其他结论须列出未满足或尚未核实的需求。`task_fit` 判断结果与用户任务的匹配程度，与来源身份或事实断言的 `findings` 分开。
 
 例如用户要求 Windows 且离线，来源只确认 Windows 时，填入 `{"source_id":"s1","verdict":"partial","reason":"页面没有说明离线运行","matched_requirements":["Windows"],"unmet_requirements":["离线运行"]}`。不能因为来源真实，就把这条结果标为 `matches`。
 
@@ -99,3 +99,44 @@ review.json 保留 original_answer、question、sources、network_actions、mech
 scope.semantic_review_status=not_performed/partial/complete 表示执行覆盖，不表示答案无误。
 每个 Finding 包含原始 claim，供报告回查和评测锚点匹配。
 退出码 0 表示成功生成报告；2 表示输入/判断不合法；1 表示文件操作失败。
+
+## 普通模式批次记录
+
+普通 Skill 每次收到一批搜索结果后保存一个轻量记录。完整示例见 [`examples/ordinary-batch-review.json`](../examples/ordinary-batch-review.json)。顶层字段为：
+
+| 字段 | 约定 |
+|---|---|
+| schema_version | 整数 1 |
+| batch_id | 本次搜索批次的稳定 ID |
+| result_ids | 按搜索返回顺序排列的全部结果 ID；零结果用空数组 |
+| reviews | 已完成的 ResultReview 数组；缺失的结果保留在分母中 |
+
+每个 ResultReview 必须包含：
+
+- `result_id`：对应 `result_ids`，不得重复；
+- `task_fit`：`{verdict, reason}`，verdict 为 matches / partial / fails / unknown；
+- `source_identity`：`{verdict, reason}`，verdict 为 verified / mismatch / unresolved；
+- `used_claim_ids`：该结果中实际影响最终答案的事实 ID；没有使用时为空数组；
+- `fact_reviews`：`{claim_id, verdict, unresolved}` 数组。被使用的每个事实都须出现，且 verdict 不能是 not_reviewed 或 out_of_scope；证据不足、无法核实或冲突时，`unresolved` 必须写明缺口。
+
+运行：
+
+```bash
+python3 scripts/review.py ordinary-status --input work/batch-review.json
+```
+
+脚本只根据记录生成 `已审查 x/y`，不会猜测缺失判断。`x` 是满足上述完整性要求的结果数，`y` 是 `result_ids` 总数。这个状态表示审查覆盖，不表示结果匹配或断言得到支持。
+
+## Codex 运行轨迹
+
+真实触发评测使用 JSONL，每行一个运行。运行字段为 `schema_version`、`run_id`、`case_id`、`method`、`status`、`platform`、`codex_version`、`model`、`settings`、`skill_revision`、`task_category`、`events`、`usage` 和 `elapsed_seconds`。
+
+事件按数组顺序表示实际发生顺序：
+
+- `{"type":"skill_activated"}`；
+- `{"type":"search_results","batch_id":"b1","result_ids":["r1"]}`；
+- `{"type":"review_recorded","batch_id":"b1","record":{...普通模式批次记录...}}`；
+- `{"type":"result_used","batch_id":"b1","result_id":"r1"}`；
+- `{"type":"answer_delivered"}`。
+
+只有在首次 `result_used` 之前已有完整审查记录的批次，才计入逐批审查覆盖率的分子。失败、超时、未触发和格式错误运行仍须保留。零结果批次单独计数，不进入“已用于答案的批次”分母。
