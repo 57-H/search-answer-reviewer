@@ -116,8 +116,9 @@ scope.semantic_review_status=not_performed/partial/complete 表示执行覆盖�
 - `result_id`：对应 `result_ids`，不得重复；
 - `task_fit`：`{verdict, reason}`，verdict 为 matches / partial / fails / unknown；
 - `source_identity`：`{verdict, reason}`，verdict 为 verified / mismatch / unresolved；
+- `used_in_answer`：布尔值，表示该结果是否影响最终答案（包括支持、排除或收窄结论）；
 - `used_claim_ids`：该结果中实际影响最终答案的事实 ID；没有使用时为空数组；
-- `fact_reviews`：`{claim_id, verdict, unresolved}` 数组。被使用的每个事实都须出现，且 verdict 不能是 not_reviewed 或 out_of_scope；证据不足、无法核实或冲突时，`unresolved` 必须写明缺口。
+- `fact_reviews`：`{claim_id, verdict, evidence_refs, unresolved}` 数组。被使用的每个事实都须出现，且 verdict 不能是 not_reviewed 或 out_of_scope。supported / contradicted / conflicted 必须引用已经捕获的证据；证据不足、无法核实或冲突时，`unresolved` 必须写明缺口。
 
 运行：
 

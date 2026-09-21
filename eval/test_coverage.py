@@ -16,8 +16,10 @@ def review_record(batch_id="b1", result_id="r1"):
             "result_id": result_id,
             "task_fit": {"verdict": "matches", "reason": "Direct answer."},
             "source_identity": {"verdict": "verified", "reason": "Identity checked."},
+            "used_in_answer": True,
             "used_claim_ids": ["c1"],
-            "fact_reviews": [{"claim_id": "c1", "verdict": "supported", "unresolved": []}],
+            "fact_reviews": [{"claim_id": "c1", "verdict": "supported",
+                              "evidence_refs": ["page-1#claim-1"], "unresolved": []}],
         }],
     }
 
@@ -79,6 +81,20 @@ class CoverageTests(unittest.TestCase):
         self.assertEqual(metrics["missed_review_batches"], 1)
         self.assertEqual(metrics["failure_categories"]["incomplete_review_record"], 1)
 
+    def test_result_use_must_be_declared_in_prior_review(self):
+        record = review_record()
+        record["reviews"][0]["used_in_answer"] = False
+        record["reviews"][0]["used_claim_ids"] = []
+        record["reviews"][0]["fact_reviews"] = []
+        metrics = score_traces([run([
+            {"type": "skill_activated"},
+            {"type": "search_results", "batch_id": "b1", "result_ids": ["r1"]},
+            {"type": "review_recorded", "batch_id": "b1", "record": record},
+            {"type": "result_used", "batch_id": "b1", "result_id": "r1"},
+        ])])
+        self.assertEqual(metrics["reviewed_before_use_batches"], 0)
+        self.assertEqual(metrics["failure_categories"]["incomplete_review_record"], 1)
+
     def test_failed_and_untriggered_runs_are_retained(self):
         failed = run([], run_id="failed", status="runtime_error")
         untriggered = run([
@@ -130,12 +146,19 @@ class CoverageTests(unittest.TestCase):
             {"run_id": "run-2", "case_id": "case-2", "method": "full_skill", "task_category": "comparison"},
         ]
         metrics = score_traces([run([])], manifest=manifest)
+        self.assertTrue(metrics["manifest_provided"])
         self.assertEqual(metrics["scheduled_runs"], 2)
         self.assertEqual(metrics["missing_run_ids"], ["run-2"])
 
         unknown = run([], run_id="outside")
         with self.assertRaisesRegex(ValueError, "manifest"):
             score_traces([unknown], manifest=manifest)
+
+    def test_empty_trace_set_does_not_report_zero_usage(self):
+        metrics = score_traces([])
+        self.assertFalse(metrics["manifest_provided"])
+        self.assertIsNone(metrics["input_tokens_total"])
+        self.assertIsNone(metrics["model_requests_total"])
 
 
 if __name__ == "__main__":

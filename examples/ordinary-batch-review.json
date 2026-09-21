@@ -13,11 +13,13 @@
         "verdict": "verified",
         "reason": "The observed publisher and page title match the declared source."
       },
+      "used_in_answer": true,
       "used_claim_ids": ["claim-1"],
       "fact_reviews": [
         {
           "claim_id": "claim-1",
           "verdict": "supported",
+          "evidence_refs": ["captured-page-1#offline-requirement"],
           "unresolved": []
         }
       ]
@@ -32,6 +34,7 @@
         "verdict": "verified",
         "reason": "The observed page belongs to the declared vendor."
       },
+      "used_in_answer": false,
       "used_claim_ids": [],
       "fact_reviews": []
     }

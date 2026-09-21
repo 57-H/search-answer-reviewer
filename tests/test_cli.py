@@ -81,6 +81,7 @@ class CLITests(unittest.TestCase):
                     "result_id": "r1",
                     "task_fit": {"verdict": "partial", "reason": "One hard condition remains open."},
                     "source_identity": {"verdict": "verified", "reason": "Title and publisher checked."},
+                    "used_in_answer": False,
                     "used_claim_ids": [],
                     "fact_reviews": [],
                 }],

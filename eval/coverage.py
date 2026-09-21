@@ -100,7 +100,8 @@ def _score_run(run: dict[str, object]) -> dict[str, object]:
         for use_index, result_id in batch_uses:
             prior = [(index, summary) for index, summary in review_events.get(batch_id, []) if index < use_index]
             had_prior_review = had_prior_review or bool(prior)
-            if not any(result_id in summary["reviewed_result_ids"] for _, summary in prior):
+            if not any(result_id in summary["reviewed_result_ids"] and
+                       result_id in summary["used_result_ids"] for _, summary in prior):
                 all_results_covered = False
         if all_results_covered:
             covered.append(batch_id)
@@ -177,6 +178,7 @@ def score_traces(runs: list[dict[str, object]], *,
                "reviewed_before_use_batches", "missed_review_batches")}
     result.update(
         schema_version=1,
+        manifest_provided=manifest is not None,
         scheduled_runs=len(scheduled) if manifest is not None else totals["runs"],
         missing_run_ids=sorted(set(scheduled) - seen) if manifest is not None else [],
         skill_activation_rate=ratio(totals["activated_expected_runs"], totals["activation_expected_runs"]),
@@ -190,7 +192,8 @@ def score_traces(runs: list[dict[str, object]], *,
                                 if elapsed_values and all(value is not None for value in elapsed_values) else None),
     )
     for field, values in usage_values.items():
-        result[field + "_total"] = sum(values) if all(value is not None for value in values) else None
+        result[field + "_total"] = (sum(values) if values and all(value is not None for value in values)
+                                    else None)
         result[field + "_missing_runs"] = sum(value is None for value in values)
     result["limitations"] = [
         "Coverage records whether review happened before use; it does not prove the semantic judgment was correct.",

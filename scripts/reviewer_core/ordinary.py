@@ -17,7 +17,8 @@ def _judgment(value: object, path: str, verdicts: set[str]) -> None:
 
 
 def _validate_result_review(value: object, result_ids: set[str], seen: set[str], path: str) -> dict[str, object]:
-    record(value, {"result_id", "task_fit", "source_identity", "used_claim_ids", "fact_reviews"}, path)
+    record(value, {"result_id", "task_fit", "source_identity", "used_in_answer",
+                   "used_claim_ids", "fact_reviews"}, path)
     text(value["result_id"], path + ".result_id")
     result_id = value["result_id"]
     require(result_id in result_ids, path + ".result_id", "unknown result")
@@ -25,6 +26,7 @@ def _validate_result_review(value: object, result_ids: set[str], seen: set[str],
     seen.add(result_id)
     _judgment(value["task_fit"], path + ".task_fit", TASK_FIT_VERDICTS)
     _judgment(value["source_identity"], path + ".source_identity", IDENTITY_VERDICTS)
+    require(type(value["used_in_answer"]) is bool, path + ".used_in_answer", "boolean required")
     strings(value["used_claim_ids"], path + ".used_claim_ids")
     require(len(set(value["used_claim_ids"])) == len(value["used_claim_ids"]),
             path + ".used_claim_ids", "duplicate claim")
@@ -32,20 +34,29 @@ def _validate_result_review(value: object, result_ids: set[str], seen: set[str],
     fact_reviews = {}
     for i, fact in enumerate(value["fact_reviews"]):
         fact_path = f"{path}.fact_reviews[{i}]"
-        record(fact, {"claim_id", "verdict", "unresolved"}, fact_path)
+        record(fact, {"claim_id", "verdict", "evidence_refs", "unresolved"}, fact_path)
         text(fact["claim_id"], fact_path + ".claim_id")
         require(fact["claim_id"] not in fact_reviews, fact_path + ".claim_id", "duplicate claim review")
         require(fact["verdict"] in VERDICTS, fact_path + ".verdict", "unknown verdict")
+        strings(fact["evidence_refs"], fact_path + ".evidence_refs")
         strings(fact["unresolved"], fact_path + ".unresolved")
+        if fact["verdict"] in {"supported", "contradicted", "conflicted"}:
+            require(bool(fact["evidence_refs"]), fact_path + ".evidence_refs",
+                    "captured evidence reference required")
+        if fact["verdict"] == "supported":
+            require(not fact["unresolved"], fact_path + ".unresolved",
+                    "supported claim cannot retain an unresolved gap")
         if fact["verdict"] in {"insufficient_evidence", "unverifiable", "conflicted"}:
             require(bool(fact["unresolved"]), fact_path + ".unresolved", "state the unresolved gap")
         fact_reviews[fact["claim_id"]] = fact
+    require(value["used_in_answer"] or not value["used_claim_ids"], path + ".used_in_answer",
+            "must be true when used_claim_ids is non-empty")
     reviewed = all(
         claim_id in fact_reviews and fact_reviews[claim_id]["verdict"] in SUBSTANTIVE_FACT_VERDICTS
         for claim_id in value["used_claim_ids"]
     )
     return {"result_id": result_id, "reviewed": reviewed,
-            "used_in_answer": bool(value["used_claim_ids"]), "record": copy.deepcopy(value)}
+            "used_in_answer": value["used_in_answer"], "record": copy.deepcopy(value)}
 
 
 def summarize_batch_review(data: dict[str, object]) -> dict[str, object]:

@@ -38,7 +38,7 @@ Unit tests validate these counting rules and CLI constraints. Offline `replay` e
 
 The primary Beta metric comes from complete Codex execution traces, not from skill-loading logs. Start from a clean repository-link installation with no development symlink and a new conversation. Use the balanced task list in `cases-codex-beta.jsonl`; run enough scheduled tasks and repetitions to observe at least 100 real search-result batches. Retain completed, failed, timed-out, invalid, and untriggered runs.
 
-For every run, record the metadata and ordered events defined in `references/schema.md`. A batch is covered only when every result used by the answer has a valid ordinary batch review before its first `result_used` event. Score saved traces with:
+For every run, record the metadata and ordered events defined in `references/schema.md`. A batch is covered only when every result used by the answer has a valid ordinary batch review before its first `result_used` event, and that review explicitly marks the result as `used_in_answer`. Score saved traces with:
 
 ```bash
 python3 eval/coverage.py \
@@ -65,4 +65,4 @@ python3 eval/release.py \
   --out work/eval/release.json
 ```
 
-`ready: true` requires at least 100 observed batches, at most 5 missed-review batches, human-validated semantic labels, zero serious false acceptances for `full_skill`, a reproducible clean installation, passing deterministic tests, and passing documentation checks. Do not publish Beta reliability claims while any gate is false. Preserve the raw JSONL traces, frozen labels, prompts, skill revision, Codex version, model/settings, failures, elapsed time and available usage alongside the report.
+`ready: true` requires every frozen manifest run to have a retained trace, at least 100 observed batches, at most 5 missed-review batches, human-validated semantic labels, results for every semantic case under all three comparison methods, zero serious false acceptances for `full_skill`, a reproducible clean installation, passing deterministic tests, and passing documentation checks. The release checker rejects coverage totals that disagree with their component counts. Do not publish Beta reliability claims while any gate is false. Preserve the raw JSONL traces, frozen labels, prompts, skill revision, Codex version, model/settings, failures, elapsed time and available usage alongside the report.
