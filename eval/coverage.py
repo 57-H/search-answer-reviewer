@@ -55,7 +55,7 @@ def _validate_run(run: dict[str, object], index: int) -> None:
 
 def _score_run(run: dict[str, object]) -> dict[str, object]:
     batches: dict[str, dict[str, object]] = {}
-    review_events: dict[str, list[tuple[int, dict[str, object]]]] = {}
+    review_events: dict[str, list[tuple[int, dict[str, object] | None]]] = {}
     uses: dict[str, list[tuple[int, str]]] = {}
     activated = False
     for event_index, event in enumerate(run["events"]):
@@ -78,10 +78,14 @@ def _score_run(run: dict[str, object]) -> dict[str, object]:
             text(event["batch_id"], path + ".batch_id")
             require(event["batch_id"] in batches, path + ".batch_id", "review before search batch")
             require(isinstance(event["record"], dict), path + ".record", "expected object")
-            summary = summarize_batch_review(event["record"])
-            require(summary["batch_id"] == event["batch_id"], path + ".record.batch_id", "batch mismatch")
-            require(event["record"]["result_ids"] == batches[event["batch_id"]]["result_ids"],
+            require(event["record"].get("batch_id") == event["batch_id"],
+                    path + ".record.batch_id", "batch mismatch")
+            require(event["record"].get("result_ids") == batches[event["batch_id"]]["result_ids"],
                     path + ".record.result_ids", "must match returned result order")
+            try:
+                summary = summarize_batch_review(event["record"])
+            except (ValueError, KeyError, TypeError):
+                summary = None
             review_events.setdefault(event["batch_id"], []).append((event_index, summary))
         elif event_type == "result_used":
             record(event, {"batch_id", "result_id"}, path)
@@ -100,7 +104,7 @@ def _score_run(run: dict[str, object]) -> dict[str, object]:
         for use_index, result_id in batch_uses:
             prior = [(index, summary) for index, summary in review_events.get(batch_id, []) if index < use_index]
             had_prior_review = had_prior_review or bool(prior)
-            if not any(result_id in summary["reviewed_result_ids"] and
+            if not any(summary is not None and result_id in summary["reviewed_result_ids"] and
                        result_id in summary["used_result_ids"] for _, summary in prior):
                 all_results_covered = False
         if all_results_covered:

@@ -77,6 +77,10 @@ def summarize_batch_review(data: dict[str, object]) -> dict[str, object]:
     seen: set[str] = set()
     states = [_validate_result_review(value, result_ids, seen, f"batch_review.reviews[{i}]")
               for i, value in enumerate(data["reviews"])]
+    for i, state in enumerate(states):
+        require(not state["used_in_answer"] or state["reviewed"],
+                f"batch_review.reviews[{i}]",
+                "used result has incomplete review")
     reviewed_ids = {state["result_id"] for state in states if state["reviewed"]}
     unreviewed = [result_id for result_id in data["result_ids"] if result_id not in reviewed_ids]
     used = [state["result_id"] for state in states if state["used_in_answer"]]

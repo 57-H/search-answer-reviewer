@@ -41,9 +41,8 @@ class OrdinaryReviewTests(unittest.TestCase):
 
     def test_used_fact_must_have_a_substantive_review_or_explicit_gap(self):
         incomplete = review(used_in_answer=True, used_claim_ids=["c1"])
-        result = summarize_batch_review(batch(reviews=[incomplete]))
-        self.assertEqual(result["review_progress"], {"reviewed": 0, "total": 1})
-        self.assertEqual(result["unreviewed_result_ids"], ["r1"])
+        with self.assertRaisesRegex(ValueError, "used result has incomplete review"):
+            summarize_batch_review(batch(reviews=[incomplete]))
 
         incomplete["fact_reviews"] = [{
             "claim_id": "c1",

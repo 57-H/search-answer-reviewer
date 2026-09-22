@@ -29,3 +29,13 @@ One same-model, same-settings development rerun of `codex-factual-01` then:
 - copied the generated `已审查 12/12` status into the final answer.
 
 This single rerun supports the root-cause hypothesis but does not establish a stable rate. The frozen release suite must restart from the revised public commit. Raw development traces remain under the ignored local `work/eval/formal/` directory.
+
+## Public revision rerun
+
+On 2026-09-22, the same ten-run slice was repeated from the public GitHub archive for revision `a6e981ac1ad0b6a02f98b063cfbad5def44e6bdf`. The archive SHA-256 was `b921757c6a80f909d7fc7ac357f49ac3769ef6c2211e14db42ad43f0bf5e8cc6`. Model, reasoning effort, Codex version, web-search setting, task order, and isolation settings matched the baseline.
+
+All ten processes completed. The skill activated in all 9 applicable tasks and did not activate in the non-search control. Every applicable task saved an ordinary batch record and invoked `ordinary-status` successfully. Median elapsed time was 209.440 seconds. Recorded usage was 1,520,685 input tokens, including 1,270,528 cached input tokens, and 22,526 output tokens.
+
+Record inspection found that 8 of the 9 applicable batches had every answer-used result fully reviewed. In the comparison task, result `r1` was marked `used_in_answer` with four linked claims, but only one linked claim had a factual verdict. The command still exited successfully and returned `已审查 16/17`. This is an incomplete review record, so the observed development coverage was 8/9, not 9/9.
+
+The follow-up fix makes `ordinary-status` reject any result marked `used_in_answer` unless all of its linked claims have substantive verdicts. Replaying the failing saved record now exits with `used result has incomplete review`. This targeted regression is deterministic; another real-model run is still required after publishing the fix. The ten-run slice remains development evidence and does not satisfy the 100-batch Beta gate or the human-validated semantic gate.

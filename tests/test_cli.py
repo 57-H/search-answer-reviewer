@@ -92,6 +92,26 @@ class CLITests(unittest.TestCase):
             self.assertEqual(output["status_line"], "已审查 1/2")
             self.assertEqual(output["unreviewed_result_ids"], ["r2"])
 
+    def test_ordinary_status_rejects_an_incompletely_reviewed_used_result(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "batch-review.json"
+            save_json(str(path), {
+                "schema_version": 1,
+                "batch_id": "batch-1",
+                "result_ids": ["r1"],
+                "reviews": [{
+                    "result_id": "r1",
+                    "task_fit": {"verdict": "matches", "reason": "Relevant result."},
+                    "source_identity": {"verdict": "verified", "reason": "Identity checked."},
+                    "used_in_answer": True,
+                    "used_claim_ids": ["c1"],
+                    "fact_reviews": [],
+                }],
+            })
+            done = self.invoke("ordinary-status", "--input", path)
+            self.assertNotEqual(done.returncode, 0)
+            self.assertIn("used result has incomplete review", done.stderr)
+
 
 if __name__ == "__main__":
     unittest.main()
