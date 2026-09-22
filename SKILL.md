@@ -19,7 +19,7 @@ Before using any returned result in reasoning or an answer, create `work/batch-r
 python /absolute/path/to/search-answer-reviewer/scripts/review.py ordinary-status --input work/batch-review.json
 ```
 
-Replace the example prefix with the directory that contains this `SKILL.md`, while keeping `work/batch-review.json` in the task workspace. Continue with the result only after this command succeeds. Copy its exact `status_line` into the final answer. When the record cannot be completed or the command fails, leave that batch unused and state `搜索结果审查未完成`; a handwritten `已审查 x/y` is not a review status. This gate is complete only when the successful command invocation is present in the execution trace.
+Replace the example prefix with the directory that contains this `SKILL.md`, while keeping `work/batch-review.json` in the task workspace. Continue with the result only after this command succeeds. Copy its exact `status_line` into the final answer. If the command fails, inspect the error, repair the record, and run the same command once more. If that retry fails, answer only that the review could not be completed and include `搜索结果审查未完成`; omit every fact, link, comparison, or recommendation derived from that batch. A handwritten `已审查 x/y` is not a review status. This gate is complete only when the successful command invocation is present in the execution trace.
 
 ## Start with the right scope
 
