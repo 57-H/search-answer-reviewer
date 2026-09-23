@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "measurement_type": "coverage_proxy",
+  "release_evidence": false,
+  "skill_revision": "0f7a51a5eaa87a0fb75453ee25b95cf9baf4154d",
+  "archive_sha256": "678e8b31edcbc806e16116b9bb71b08d846fb858588d29cdf96e857382544442",
+  "manifest_sha256": "960ddec2c7d971bc33d920253e4afaa6458d39020fc56d647577a34fc24ac3c6",
+  "platform": "Codex CLI",
+  "codex_version": "0.155.0-alpha.9.2",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "web_search": true,
+  "runs": 100,
+  "applicable_runs": 90,
+  "non_search_controls": 10,
+  "runtime_failures": 0,
+  "observed_batches": 100,
+  "reviewed_batches_proxy": 97,
+  "missed_review_batches_proxy": 3,
+  "coverage_proxy": 0.97,
+  "skill_load_failures": 1,
+  "non_search_control_false_activations": 0,
+  "applicable_runs_without_final_status": 1,
+  "median_elapsed_seconds": 199.1065,
+  "usage": {
+    "input_tokens": 17451858,
+    "cached_input_tokens": 14626816,
+    "output_tokens": 240382
+  },
+  "categories": {
+    "factual_lookup": {"runs": 10, "observed_batches": 10, "reviewed_batches_proxy": 10, "missed_batches_proxy": 0},
+    "recommendation": {"runs": 10, "observed_batches": 13, "reviewed_batches_proxy": 11, "missed_batches_proxy": 2},
+    "comparison": {"runs": 10, "observed_batches": 10, "reviewed_batches_proxy": 10, "missed_batches_proxy": 0},
+    "citation_check": {"runs": 10, "observed_batches": 10, "reviewed_batches_proxy": 10, "missed_batches_proxy": 0},
+    "version_sensitive": {"runs": 10, "observed_batches": 10, "reviewed_batches_proxy": 10, "missed_batches_proxy": 0},
+    "unavailable_page": {"runs": 10, "observed_batches": 10, "reviewed_batches_proxy": 10, "missed_batches_proxy": 0},
+    "multi_round": {"runs": 10, "observed_batches": 16, "reviewed_batches_proxy": 15, "missed_batches_proxy": 1},
+    "existing_results": {"runs": 10, "observed_batches": 10, "reviewed_batches_proxy": 10, "missed_batches_proxy": 0},
+    "correction_search": {"runs": 10, "observed_batches": 11, "reviewed_batches_proxy": 11, "missed_batches_proxy": 0},
+    "non_search_control": {"runs": 10, "observed_batches": 0, "reviewed_batches_proxy": 0, "missed_batches_proxy": 0}
+  },
+  "failures": [
+    {
+      "run_id": "codex-multiround-01-r4",
+      "category": "multi_round",
+      "observed_batches": 2,
+      "reviewed_batches_proxy": 1,
+      "missed_batches_proxy": 1,
+      "classification": "per_batch_record_missing",
+      "detail": "Two searches were consolidated into one successful b1 record, so the supplementary batch had no separate record."
+    },
+    {
+      "run_id": "codex-recommend-01-r7",
+      "category": "recommendation",
+      "observed_batches": 2,
+      "reviewed_batches_proxy": 0,
+      "missed_batches_proxy": 2,
+      "classification": "skill_load_failed",
+      "detail": "The model read a nonexistent aliased skill path and did not retry the repository-scoped installation path."
+    }
+  ],
+  "threshold_count_met": true,
+  "beta_ready": false,
+  "limitations": [
+    "Codex raw traces do not expose result_used events. The proxy conservatively treats every observed web-search or supplied-results batch as used, then matches it to distinct successful ordinary-status batch IDs in the same run.",
+    "Successful record validation proves structural coverage, not semantic correctness.",
+    "The separate human-validated semantic comparison required by the Beta protocol has not been completed."
+  ]
+}
